@@ -83,6 +83,10 @@ fabric.properties
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+Temp/
+
+Gravity Game/Temp/
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
