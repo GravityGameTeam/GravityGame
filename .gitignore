@@ -85,6 +85,15 @@ fabric.properties
 
 Gravity Game/Temp/
 Gravity Game/Library/
+Gravity Game/Logs/
+
+/Gravity Game/Temp/
+/Gravity Game/Library/
+/Gravity Game/Logs/
+
+Temp/
+Library/
+Logs/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
