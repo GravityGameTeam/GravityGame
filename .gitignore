@@ -84,6 +84,13 @@ fabric.properties
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
 Gravity Game/Temp/
 Gravity Game/Library/
 Gravity Game/Logs/
