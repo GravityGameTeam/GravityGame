@@ -99,6 +99,8 @@ Gravity Game/Library/
 /Gravity Game/Temp/
 /Gravity Game/Logs/
 
+/Gravity Game/Library/assetDatabase3
+
 # !!! If your .gitignore is in the root folder, the original ones, with the slash, won't work. 
 
 # Never ignore Asset meta data
