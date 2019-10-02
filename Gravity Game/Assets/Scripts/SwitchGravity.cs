@@ -10,6 +10,10 @@ public class SwitchGravity : MonoBehaviour
 
     private static int Y = 0;
     private static int X = 1;
+    private static Vector2 DOWN = new Vector2(0, -30);
+    private static Vector2 UP = new Vector2(0, 30);
+    private static Vector2 LEFT = new Vector2(-30, 0);
+    private static Vector2 RIGHT = new Vector2(30, 0);
     
     // Start is called before the first frame update
     void Start()
@@ -22,25 +26,25 @@ public class SwitchGravity : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            Physics2D.gravity = new Vector2(0f, 30f);
+            Physics2D.gravity = UP;
             GetComponent<PlayerMovement>().ChangeAxis(Y);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            Physics2D.gravity = new Vector2(0f, -30f);
+            Physics2D.gravity = DOWN;
             GetComponent<PlayerMovement>().ChangeAxis(Y);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Physics2D.gravity = new Vector2(-30f, 0);
+            Physics2D.gravity = LEFT;
             GetComponent<PlayerMovement>().ChangeAxis(X);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            Physics2D.gravity = new Vector2(30f, 0f);
+            Physics2D.gravity = RIGHT;
             GetComponent<PlayerMovement>().ChangeAxis(X);
         }
     }

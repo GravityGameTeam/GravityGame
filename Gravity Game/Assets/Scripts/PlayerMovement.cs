@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     private int gAxis = 0;
     private static int Y = 0;
     private static int X = 1;
+    private static Vector2 DOWN = new Vector2(0, -30);
+    private static Vector2 UP = new Vector2(0, 30);
+    private static Vector2 LEFT = new Vector2(-30, 0);
+    private static Vector2 RIGHT = new Vector2(30, 0);
     
     //jump variables
     public float jumpForce;
@@ -104,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         }
         */
 
+        /*
         Debug.Log("Grounded: " + isGrounded + " and velocity: " + rb.velocity.y);
         
         if (isGrounded && rb.velocity.y <= 0)
@@ -115,10 +120,27 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Can't jump'");
         }
+        */
+        
+        Debug.Log("Override isGrounded to true, jumping enabled");
+        isGrounded = true;
+        canJump = true;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump(0, 1);
+        }
+        if (Physics2D.gravity == UP && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Jump(0, -1);
+        }
+        if (Physics2D.gravity == LEFT && Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Jump(1, 0);
+        }
+        if (Physics2D.gravity == RIGHT && Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Jump(-1, 0);
         }
     }
 
