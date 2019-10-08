@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Level1Button ()
+    {
+        SceneManager.LoadScene("MovementTest");
+    }
 
 
 }
