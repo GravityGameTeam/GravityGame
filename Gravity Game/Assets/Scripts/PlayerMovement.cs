@@ -25,14 +25,9 @@ public class PlayerMovement : MonoBehaviour
     
     //jump variables
     public float jumpForce;
-    public float groundCheckRadius;
 
     private bool canJump = false;
     private bool isGrounded = false;
-    
-    public LayerMask whatIsGround; //baby don't hurt me, don't hurt me, no more
-
-    public Transform groundCheck;
     
     //Start
     void Start()
@@ -46,14 +41,10 @@ public class PlayerMovement : MonoBehaviour
         GetMove();
     }
 
-    //First, checks if it's on the ground
     //Creates a force and changes it based on the gravity axis, then applies it
     //Changes the ground movement speed so you can't be Sonic
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        Debug.Log("Grounded: " + isGrounded);
-        
         Vector2 forceToAdd = new Vector2();
         
         if (gAxis == Y)
@@ -77,6 +68,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Entered ground");
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Exited ground");
+            isGrounded = false;
+        }
+    }
+
     //Gets user input.
     private void GetMove()
     {
@@ -95,36 +104,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void GetJump()
     {
-        /*
-        if ((gAxis == Y && (isGrounded && rb.velocity.y == 0)) || (gAxis == X && (isGrounded && rb.velocity.x == 0))) //sets jump condition, checking based on either axis
-        {
-            canJump = true;
-        }
-        
-        //Jump functions only allow jumping if the gravity's right.
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (Physics2D.gravity == new Vector2(0f, -30f)))
-        {
-            //
-        }
-        */
-
-        /*
         Debug.Log("Grounded: " + isGrounded + " and velocity: " + rb.velocity.y);
         
-        if (isGrounded && rb.velocity.y <= 0)
+        if (isGrounded && (gAxis == Y && rb.velocity.y == 0 || gAxis == X && rb.velocity.x == 0))
         {
             Debug.Log("Can jump");
             canJump = true;
         }
         else
         {
-            Debug.Log("Can't jump'");
+            Debug.Log("Can't jump");
         }
-        */
-        
-        Debug.Log("Override isGrounded to true, jumping enabled");
-        isGrounded = true;
-        canJump = true;
 
         if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
         {
