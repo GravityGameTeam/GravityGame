@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Physics2D.gravity = DOWN;
     }
 
     //Gets movement
@@ -58,21 +59,13 @@ public class PlayerMovement : MonoBehaviour
         
         rb.AddForce(forceToAdd);
 
-        if (gAxis == Y)
-        {
-            SlowX();
-        }
-        else if (gAxis == X)
-        {
-            SlowY();
-        }
+        SlowMovement();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Entered ground");
             isGrounded = true;
         }
     }
@@ -81,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Exited ground");
             isGrounded = false;
         }
     }
@@ -104,16 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void GetJump()
     {
-        Debug.Log("Grounded: " + isGrounded + " and velocity: " + rb.velocity.y);
-        
-        if (isGrounded && (gAxis == Y && rb.velocity.y == 0 || gAxis == X && rb.velocity.x == 0))
+        if (isGrounded && (gAxis == Y && AlmostEqual(rb.velocity.y, 0) || gAxis == X && AlmostEqual(rb.velocity.x, 0)))
         {
-            Debug.Log("Can jump");
             canJump = true;
-        }
-        else
-        {
-            Debug.Log("Can't jump");
         }
 
         if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
@@ -138,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canJump)
         {
-            Debug.Log("Yeeting");
             rb.velocity = new Vector2(rb.velocity.x, 0);
             Vector2 jumpForceToAdd = new Vector2(jumpForce * xYeet, jumpForce * yYeet);
             rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
@@ -147,41 +131,23 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //constrains movement speed on x-axis if gravity's on the y
-    private void SlowX()
+    private void SlowMovement()
     {
-        if (rb.velocity.x > maxMovementSpeed)
+        float currentVelocity = gAxis == Y ? rb.velocity.x : rb.velocity.y; 
+        
+        if (currentVelocity > maxMovementSpeed)
         {
-            rb.velocity = new Vector2(maxMovementSpeed, rb.velocity.y);
+            rb.velocity = gAxis == Y ? new Vector2(maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, maxMovementSpeed);
         }
-        else if (rb.velocity.x < -maxMovementSpeed)
+        else if (currentVelocity < -maxMovementSpeed)
         {
-            rb.velocity = new Vector2(-maxMovementSpeed, rb.velocity.y);
+            rb.velocity = gAxis == Y ? new Vector2(-maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, -maxMovementSpeed);
         }
 
-        if (movementDirection == 0)
+        if (AlmostEqual(movementDirection, 0))
         {
             velocity = rb.velocity;
             velocity.x *= groundFrictionLevel;
-            rb.velocity = velocity;
-        }
-    }
-    
-    //constrains movement speed on y-axis if gravity's on x
-    private void SlowY()
-    {
-        if (rb.velocity.y > maxMovementSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxMovementSpeed);
-        }
-        else if (rb.velocity.y < -maxMovementSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -maxMovementSpeed);
-        }
-
-        if (movementDirection == 0)
-        {
-            velocity = rb.velocity;
-            velocity.y *= groundFrictionLevel;
             rb.velocity = velocity;
         }
     }
@@ -190,5 +156,15 @@ public class PlayerMovement : MonoBehaviour
     public void ChangeAxis(int newAxis)
     {
         gAxis = newAxis;
+    }
+    
+    private bool AlmostEqual(float a, float b)
+    {
+        if (Math.Abs(a - b) < 0.00001f)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
