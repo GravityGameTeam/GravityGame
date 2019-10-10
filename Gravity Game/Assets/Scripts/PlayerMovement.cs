@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     
     //gravity
-    private int gAxis = 0;
+    private int gAxis;
     private static int Y = 0;
     private static int X = 1;
     private static Vector2 DOWN = new Vector2(0, -30);
@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     //jump variables
     public float jumpForce;
 
-    private bool canJump = false;
-    private bool isGrounded = false;
+    private bool canJump;
+    private bool isGrounded;
     
     //Start
     void Start()
@@ -59,7 +59,16 @@ public class PlayerMovement : MonoBehaviour
         
         rb.AddForce(forceToAdd);
 
-        SlowMovement();
+        //SlowMovement();
+
+        if (gAxis == Y)
+        {
+            SlowX();
+        }
+        else
+        {
+            SlowY();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -78,79 +87,116 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Gets user input.
+    //Gets user input:
+    //Detects movement based on 
     private void GetMove()
     {
-        if (gAxis == Y)
-        {
-            movementDirection = Input.GetAxis("Horizontal");
-        } 
-        else if (gAxis == X)
-        {
-            movementDirection = Input.GetAxis("Vertical");
-        }
-
-        Debug.Log("Getting jump input");
-        GetJump();
-    }
-
-    private void GetJump()
-    {
+        movementDirection = Input.GetAxis(gAxis == Y ? "Horizontal" : "Vertical");
+        
         if (isGrounded && (gAxis == Y && AlmostEqual(rb.velocity.y, 0) || gAxis == X && AlmostEqual(rb.velocity.x, 0)))
         {
             canJump = true;
         }
 
-        if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
+        if (canJump)
         {
-            Jump(0, 1);
-        }
-        if (Physics2D.gravity == UP && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Jump(0, -1);
-        }
-        if (Physics2D.gravity == LEFT && Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Jump(1, 0);
-        }
-        if (Physics2D.gravity == RIGHT && Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Jump(-1, 0);
+            if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump(0, 1);
+            }
+
+            if (Physics2D.gravity == UP && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Jump(0, -1);
+            }
+
+            if (Physics2D.gravity == LEFT && Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Jump(1, 0);
+            }
+
+            if (Physics2D.gravity == RIGHT && Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Jump(-1, 0);
+            }
         }
     }
 
     private void Jump(int xYeet, int yYeet)
     {
-        if (canJump)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            Vector2 jumpForceToAdd = new Vector2(jumpForce * xYeet, jumpForce * yYeet);
-            rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
-            canJump = false;
-        }
+        //rb.velocity = new Vector2(rb.velocity.x, 0);
+        Vector2 jumpForceToAdd = new Vector2(jumpForce * xYeet, jumpForce * yYeet);
+        rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
+        canJump = false;
     }
 
     //constrains movement speed on x-axis if gravity's on the y
-    private void SlowMovement()
+    private void SlowX()
     {
-        float currentVelocity = gAxis == Y ? rb.velocity.x : rb.velocity.y; 
-        
-        if (currentVelocity > maxMovementSpeed)
+        if (rb.velocity.x > maxMovementSpeed)
         {
-            rb.velocity = gAxis == Y ? new Vector2(maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, maxMovementSpeed);
+            rb.velocity = new Vector2(maxMovementSpeed, rb.velocity.y);
         }
-        else if (currentVelocity < -maxMovementSpeed)
+        else if (rb.velocity.x < -maxMovementSpeed)
         {
-            rb.velocity = gAxis == Y ? new Vector2(-maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, -maxMovementSpeed);
+            rb.velocity = new Vector2(-maxMovementSpeed, rb.velocity.y);
         }
 
-        if (AlmostEqual(movementDirection, 0))
+        if (movementDirection == 0)
         {
             velocity = rb.velocity;
             velocity.x *= groundFrictionLevel;
             rb.velocity = velocity;
         }
     }
+    
+    //constrains movement speed on y-axis if gravity's on x
+    private void SlowY()
+    {
+        if (rb.velocity.y > maxMovementSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxMovementSpeed);
+        }
+        else if (rb.velocity.y < -maxMovementSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxMovementSpeed);
+        }
+
+        if (movementDirection == 0)
+        {
+            velocity = rb.velocity;
+            velocity.y *= groundFrictionLevel;
+            rb.velocity = velocity;
+        }
+    }
+    
+    /*
+    private void SlowMovement()
+    {
+        float currentVelocity = gAxis == Y ? rb.velocity.x : rb.velocity.y;
+        Debug.Log("Axis: " + gAxis + ", current ground velocity: " + currentVelocity);
+        
+        if (currentVelocity > maxMovementSpeed)
+        {
+            Debug.Log("Ground velocity > 7");
+            rb.velocity = gAxis == Y ? new Vector2(maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, maxMovementSpeed);
+            Debug.Log("New velocity: " + rb.velocity);
+        }
+        else if (currentVelocity < -maxMovementSpeed)
+        {
+            Debug.Log("Ground velocity < -7");
+            rb.velocity = gAxis == Y ? new Vector2(-maxMovementSpeed, rb.velocity.y) : new Vector2(rb.velocity.x, -maxMovementSpeed);
+            Debug.Log("New velocity: " + rb.velocity);
+        }
+
+        if (AlmostEqual(movementDirection, 0))
+        {
+            velocity = rb.velocity;
+            velocity = gAxis == Y ? new Vector2(velocity.x * groundFrictionLevel, velocity.y) : new Vector2(velocity.y, velocity.y * groundFrictionLevel);
+            rb.velocity = velocity;
+        }
+    }
+    */
 
     //called by SwitchGravity to alter the gravity axis
     public void ChangeAxis(int newAxis)
