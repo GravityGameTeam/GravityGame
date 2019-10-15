@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            Debug.Log("Found ground");
         }
     }
 
