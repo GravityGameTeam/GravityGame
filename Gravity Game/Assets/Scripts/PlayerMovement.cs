@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //basic ground movement
+    public float gravityForce;
     public float movementForce;
     public float maxMovementSpeed;
     [Range(0,1)]public float groundFrictionLevel;
@@ -16,12 +17,12 @@ public class PlayerMovement : MonoBehaviour
     
     //gravity
     private int gAxis;
-    private static int Y = 0;
-    private static int X = 1;
-    private static Vector2 DOWN = new Vector2(0, -30);
-    private static Vector2 UP = new Vector2(0, 30);
-    private static Vector2 LEFT = new Vector2(-30, 0);
-    private static Vector2 RIGHT = new Vector2(30, 0);
+    private readonly int Y = 0;
+    private readonly int X = 1;
+    private Vector2 DOWN;
+    private Vector2 UP;
+    private Vector2 LEFT;
+    private Vector2 RIGHT;
     
     //jump variables
     public float jumpForce;
@@ -33,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        DOWN = new Vector2(0, -gravityForce);
+        UP = new Vector2(0, gravityForce);
+        LEFT = new Vector2(-gravityForce, 0);
+        RIGHT = new Vector2(gravityForce, 0);
         Physics2D.gravity = DOWN;
     }
 
@@ -40,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         GetMove();
+
+        SwitchGravity();
     }
 
     //Creates a force and changes it based on the gravity axis, then applies it
@@ -122,6 +129,33 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void SwitchGravity()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Physics2D.gravity = UP;
+            gAxis = Y;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Physics2D.gravity = DOWN;
+            gAxis = Y;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Physics2D.gravity = LEFT;
+            gAxis = X;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Physics2D.gravity = RIGHT;
+            gAxis = X;
+        }
+    }
+
     private void Jump(int xYeet, int yYeet)
     {
         //rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -198,12 +232,6 @@ public class PlayerMovement : MonoBehaviour
     }
     */
 
-    //called by SwitchGravity to alter the gravity axis
-    public void ChangeAxis(int newAxis)
-    {
-        gAxis = newAxis;
-    }
-    
     private bool AlmostEqual(float a, float b)
     {
         if (Math.Abs(a - b) < 0.00001f)
