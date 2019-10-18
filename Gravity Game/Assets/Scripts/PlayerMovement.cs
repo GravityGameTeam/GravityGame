@@ -80,10 +80,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Spike"))
+        {
+            gameObject.SetActive(false);
+            Respawn();
+            gameObject.SetActive(true);
+        }
+        else if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -232,6 +239,14 @@ public class PlayerMovement : MonoBehaviour
     }
     */
 
+    private void Respawn()
+    {
+        rb.velocity = new Vector2(0, 0);
+        Debug.Log("velocity: " + rb.velocity);
+        rb.transform.position = new Vector2(0, 0);
+        Debug.Log("position: " + rb.position);
+    }
+    
     private bool AlmostEqual(float a, float b)
     {
         if (Math.Abs(a - b) < 0.00001f)
