@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [Range(0,1)]public float groundFrictionLevel;
 
     private float movementDirection;
-    private Vector2 velocity;
     private Rigidbody2D rb;
     
     //gravity
@@ -172,6 +171,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //constrains movement speed on x-axis if gravity's on the y
+    private void Slow()
+    {
+        if ((gAxis == Y ? rb.velocity.x: rb.velocity.y) > maxMovementSpeed)
+        {
+            rb.velocity = new Vector2(maxMovementSpeed, rb.velocity.y);
+        }
+        else if ((gAxis == Y ? rb.velocity.x: rb.velocity.y) < -maxMovementSpeed)
+        {
+            rb.velocity = new Vector2(-maxMovementSpeed, rb.velocity.y);
+        }
+
+        if (movementDirection == 0)
+        {
+            Vector2 velocity = rb.velocity;
+            velocity.x *= groundFrictionLevel;
+            rb.velocity = velocity;
+        }
+    }
+    
     private void SlowX()
     {
         if (rb.velocity.x > maxMovementSpeed)
@@ -185,7 +203,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementDirection == 0)
         {
-            velocity = rb.velocity;
+            Vector2 velocity = rb.velocity;
             velocity.x *= groundFrictionLevel;
             rb.velocity = velocity;
         }
@@ -205,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementDirection == 0)
         {
-            velocity = rb.velocity;
+            Vector2 velocity = rb.velocity;
             velocity.y *= groundFrictionLevel;
             rb.velocity = velocity;
         }
@@ -241,10 +259,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Respawn()
     {
+        rb.transform.position = new Vector2(0, 0);
         rb.velocity = new Vector2(0, 0);
+        gAxis = Y;
         Physics2D.gravity = DOWN;
         Debug.Log("velocity: " + rb.velocity);
-        rb.transform.position = new Vector2(0, 0);
         Debug.Log("position: " + rb.position);
     }
     
