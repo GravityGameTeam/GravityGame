@@ -173,9 +173,11 @@ public class PlayerMovement : MonoBehaviour
     //constrains movement speed on x-axis if gravity's on the y
     private void Slow()
     {
-        if ((gAxis == Y ? rb.velocity.x: rb.velocity.y) > maxMovementSpeed)
+        Vector2 velocity = rb.velocity;
+        
+        if ((gAxis == Y ? velocity.x : velocity.y) > maxMovementSpeed)
         {
-            rb.velocity = new Vector2(maxMovementSpeed, rb.velocity.y);
+            velocity.x = maxMovementSpeed;
         }
         else if ((gAxis == Y ? rb.velocity.x: rb.velocity.y) < -maxMovementSpeed)
         {
@@ -184,7 +186,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementDirection == 0)
         {
-            Vector2 velocity = rb.velocity;
             velocity.x *= groundFrictionLevel;
             rb.velocity = velocity;
         }
@@ -263,8 +264,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-        Debug.Log("velocity: " + rb.velocity);
-        Debug.Log("position: " + rb.position);
     }
     
     private bool AlmostEqual(float a, float b)
