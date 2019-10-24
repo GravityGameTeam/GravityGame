@@ -242,6 +242,7 @@ public class PlayerMovement : MonoBehaviour
     private void Respawn()
     {
         rb.velocity = new Vector2(0, 0);
+        Physics2D.gravity = DOWN;
         Debug.Log("velocity: " + rb.velocity);
         rb.transform.position = new Vector2(0, 0);
         Debug.Log("position: " + rb.position);
