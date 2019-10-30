@@ -134,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
     }
 
-    //constrains movement speed on x-axis if gravity's on the y
     private void Slow()
     {
         float velocity = gAxis == Y ? rb.velocity.x : rb.velocity.y;
