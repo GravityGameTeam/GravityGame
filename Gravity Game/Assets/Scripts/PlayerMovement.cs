@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canJump;
     private bool isGrounded;
+    
+    
     
     //Start
     void Start()
@@ -275,4 +278,16 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
+
+    /*IEnumerator StartDelay()
+    {
+        var countdown = new Countdown();
+        Time.timeScale = 0;
+        float pauseTime = Time.realtimeSinceStartup + 3f;
+        yield return 0;
+        countdown.Start();
+        Time.timeScale = 1;
+
+
+    }*/
 }
