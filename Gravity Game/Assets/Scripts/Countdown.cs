@@ -12,7 +12,6 @@ public class Countdown : MonoBehaviour
     public void Start()
     {
         StartCoroutine("StartDelay");
-
     }
 
     // Update is called once per frame

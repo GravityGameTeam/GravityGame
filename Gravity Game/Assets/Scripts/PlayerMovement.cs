@@ -167,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.gravity = DOWN;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
         countdown1.Start();
-        
     }
     
     private bool AlmostEqual(float a, float b)
