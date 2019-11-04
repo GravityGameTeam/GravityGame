@@ -15,6 +15,7 @@ public class LevelsMenu : MonoBehaviour
         {
             GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
             container.GetComponent<Image>().sprite = thumbnail;
+            container.transform.SetParent(levelsButtonContainer.transform,false);
         }
     }
 
