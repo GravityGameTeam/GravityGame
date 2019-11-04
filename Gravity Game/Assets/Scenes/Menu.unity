@@ -171,6 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefabs:
+  - {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903, type: 3}
+  - {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347, type: 3}
+  - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
 --- !u!1 &119114583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,6 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefabs: []
 --- !u!1 &809532453
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefabs: []
 --- !u!1 &1745381885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,6 +4439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefabs: []
 --- !u!1 &2068431478
 GameObject:
   m_ObjectHideFlags: 0

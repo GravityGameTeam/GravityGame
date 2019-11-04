@@ -18,6 +18,4 @@ public class LevelsMenu : MonoBehaviour
             container.transform.SetParent(levelsButtonContainer.transform,false);
         }
     }
-
-
 }
