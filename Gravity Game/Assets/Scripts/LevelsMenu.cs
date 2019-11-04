@@ -17,6 +17,4 @@ public class LevelsMenu : MonoBehaviour
             container.GetComponent<Image>().sprite = thumbnail;
         }
     }
-
-
 }

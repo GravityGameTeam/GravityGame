@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,22 @@ public class EndLevel : MonoBehaviour
     public bool appear = true;
     
     public GameObject menuPanel;
+
+    //public List<GameObject> levelPrefabs = new List<GameObject>();
+
+    //private List<GameObject> levels = new List<GameObject>();
+    
     // Start is called before the first frame update
     public void Start()
     {
-        gameObject.active = appear;
+        gameObject.SetActive(appear);
         menuPanel.SetActive(false);
+        /*
+        foreach (GameObject level in levelPrefabs)
+        {
+            levels.Add(Instantiate(level));
+        }
+        */
     }
 
     // Update is called once per frame
@@ -26,9 +38,9 @@ public class EndLevel : MonoBehaviour
     {
         Debug.Log("Collided");
         appear = false;
-        if (node.gameObject.tag == "EndPortal")
+        if (node.gameObject.CompareTag("EndPortal"))
         {
-            gameObject.active = appear;
+            gameObject.SetActive(appear);
             LevelBeat();
 
         } ;
@@ -48,4 +60,15 @@ public class EndLevel : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    /*
+    public void SwitchLevel(int levelNumber)
+    {
+        foreach (GameObject level in levels)
+        {
+            level.SetActive(false);
+        }
+        levels[levelNumber - 1].SetActive(true);
+    }
+    */
 }
