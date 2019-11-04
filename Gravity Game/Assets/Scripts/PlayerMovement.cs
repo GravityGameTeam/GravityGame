@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     //Start
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         DOWN = new Vector2(0, -gravityForce);
         UP = new Vector2(0, gravityForce);
@@ -263,10 +265,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Respawn()
     {
+        Countdown countdown1 = new Countdown();
+        
         rb.transform.position = new Vector2(0, 0);
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
+        countdown1.Start();
+        
     }
     
     private bool AlmostEqual(float a, float b)
@@ -278,16 +285,5 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
-
-    /*IEnumerator StartDelay()
-    {
-        var countdown = new Countdown();
-        Time.timeScale = 0;
-        float pauseTime = Time.realtimeSinceStartup + 3f;
-        yield return 0;
-        countdown.Start();
-        Time.timeScale = 1;
-
-
-    }*/
+    
 }

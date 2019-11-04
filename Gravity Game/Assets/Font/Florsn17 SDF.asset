@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Florsn17 SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -841499267
   material: {fileID: 4354341175911873424}
-  materialHashCode: 0
+  materialHashCode: -1966323882
   m_Version: 1.1.0
   m_SourceFontFileGUID: 38692fb59b531b840a9938b389af7d44
   m_SourceFontFile_EditorRef: {fileID: 0}
@@ -2624,7 +2624,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.135
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333

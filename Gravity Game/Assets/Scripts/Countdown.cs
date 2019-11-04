@@ -1,33 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-    private float currentTime = 0f;
-    private float startingTime = 3f;
+    public GameObject countdown;
 
-    [SerializeField] Text countdownText;
     // Start is called before the first frame update
     public void Start()
     {
-        currentTime = startingTime;
+        StartCoroutine("StartDelay");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
-
-        if (currentTime <= 0)
-        {
-            currentTime = 0;
-            countdownText.gameObject.SetActive(false);
-        }
 
     }
+
+    IEnumerator StartDelay()
+    {
+        Time.timeScale = 0;
+        float pauseTime = Time.realtimeSinceStartup + 3f;
+        while (Time.realtimeSinceStartup < pauseTime)
+            yield return 0;
+        countdown.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
 }
 
