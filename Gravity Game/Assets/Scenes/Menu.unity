@@ -4564,6 +4564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9cfad8d29ea1d478f8c69d6423ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 885553721}
   levelsButtonPrefab: {fileID: 5046967954142894637, guid: ed30b3e6708281d438762bc8f901b89b,
     type: 3}
   levelsButtonContainer: {fileID: 1963722668}

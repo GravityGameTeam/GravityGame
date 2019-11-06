@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelsMenu : MonoBehaviour
 {
+    public GameObject levelManager;
     public GameObject levelsButtonPrefab;
     public GameObject levelsButtonContainer;
 
@@ -26,6 +27,7 @@ public class LevelsMenu : MonoBehaviour
     private void LevelLoad(string sceneName)
     {
         SceneManager.LoadScene("Game");
+        levelManager.GetComponent<LevelSwitcher>().SelectLevel(1);
         Debug.Log(sceneName);
     }
 }
