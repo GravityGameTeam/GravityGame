@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f871ea8b7df4c6468592067794e2c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
+  levelPrefabs:
   - {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903, type: 3}
   - {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347, type: 3}
   - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
