@@ -11,13 +11,18 @@ public class Countdown : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        StartCoroutine("StartDelay");
+        beginCo();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void beginCo()
+    {
+        StartCoroutine("StartDelay");
     }
 
     IEnumerator StartDelay()
