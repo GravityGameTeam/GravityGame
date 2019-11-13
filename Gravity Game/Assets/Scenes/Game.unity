@@ -625,6 +625,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: level3
       objectReference: {fileID: 0}
+    - target: {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3247313482368552839, guid: 329f1b1c52e87024a817bf11ea353492,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -663,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 3247313482368552839, guid: 329f1b1c52e87024a817bf11ea353492,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3247313482368552839, guid: 329f1b1c52e87024a817bf11ea353492,
         type: 3}
@@ -1903,12 +1908,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008769674}
   m_CullTransparentMesh: 0
---- !u!1 &1018422140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903,
-    type: 3}
-  m_PrefabInstance: {fileID: 1929038092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093789789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,12 +2832,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1225658899 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347,
-    type: 3}
-  m_PrefabInstance: {fileID: 129439236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260824650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,7 +3519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1476019213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,10 +3532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f871ea8b7df4c6468592067794e2c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 1018422140}
-  - {fileID: 1225658899}
-  - {fileID: 1167484863}
+  levelPrefabs: []
 --- !u!4 &1476019214
 Transform:
   m_ObjectHideFlags: 0

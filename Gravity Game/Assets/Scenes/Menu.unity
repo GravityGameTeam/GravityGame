@@ -175,6 +175,36 @@ MonoBehaviour:
   - {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903, type: 3}
   - {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347, type: 3}
   - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
+--- !u!1 &91527172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91527173}
+  m_Layer: 0
+  m_Name: SkinsMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91527173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91527172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 517.10846, y: 272.47217, z: -362.9059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119114583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1817,66 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &885553721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885553724}
+  - component: {fileID: 885553723}
+  - component: {fileID: 885553722}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &885553722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885553721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2929a17ccacbb14d9bf41c35298e4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &885553723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885553721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f871ea8b7df4c6468592067794e2c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelPrefabs:
+  - {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903, type: 3}
+  - {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347, type: 3}
+  - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
+--- !u!4 &885553724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885553721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 583.25793, y: 263.97418, z: -0.8394446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &927365148 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1033059623387103259, guid: 2d600723a9541bc47916751135311336,
@@ -4504,6 +4594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9cfad8d29ea1d478f8c69d6423ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 885553721}
   levelsButtonPrefab: {fileID: 5046967954142894637, guid: ed30b3e6708281d438762bc8f901b89b,
     type: 3}
   levelsButtonContainer: {fileID: 1963722668}
