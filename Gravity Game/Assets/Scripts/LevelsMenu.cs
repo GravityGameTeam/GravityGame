@@ -27,7 +27,12 @@ public class LevelsMenu : MonoBehaviour
     private void LevelLoad(string sceneName)
     {
         SceneManager.LoadScene("Game");
+        Debug.Log("Loaded scene");
+        
+        Debug.Log("Attempting to move level:");
         levelManager.GetComponent<LevelSwitcher>().SelectLevel(1);
+        //levelManager.GetComponent<LevelSwitcher>().InstantiateLevels();
+        
         Debug.Log(sceneName);
     }
 }
