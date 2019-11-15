@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LevelsMenu : MonoBehaviour
 {
-    public GameObject levelManager;
     public GameObject levelsButtonPrefab;
     public GameObject levelsButtonContainer;
 
@@ -26,13 +25,9 @@ public class LevelsMenu : MonoBehaviour
 
     private void LevelLoad(string sceneName)
     {
+        LevelNumber.selectedLevel = 1;
         SceneManager.LoadScene("Game");
         Debug.Log("Loaded scene");
-        
-        Debug.Log("Attempting to move level:");
-        levelManager.GetComponent<LevelSwitcher>().SelectLevel(1);
-        //levelManager.GetComponent<LevelSwitcher>().InstantiateLevels();
-        
         Debug.Log(sceneName);
     }
 }
