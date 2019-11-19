@@ -14,37 +14,34 @@ public class LevelSwitcher : MonoBehaviour
         foreach (GameObject levelPrefab in levelPrefabs)
         {
             GameObject newLevel = Instantiate(levelPrefab);
-            newLevel.SetActive(false);
             levels.Add(newLevel);
         }
+        SelectLevel(LevelNumber.selectedLevel);
     }
 
     // Update is called once per frame
-    public void ClearLevels()
+    public void HideLevels()
     {
-        /*
         foreach (GameObject level in levels)
         {
             level.SetActive(false);
         }
-        */
     }
 
     public void SelectLevel(int levelNumber)
     {
+        HideLevels();
         levels[levelNumber - 1].SetActive(true);
-        SceneManager.MoveGameObjectToScene(levels[levelNumber - 1], SceneManager.GetSceneByName("Game"));
-        Debug.Log("Moved level object?");
-        
-        //ClearLevels();
-        //levels[level - 1].SetActive(true);
     }
 
-    public void InstantiateLevels()
+    public void NextLevel()
     {
-        for (int i = 0; i < levelPrefabs.Count; i ++)
+        LevelNumber.selectedLevel += 1;
+        if (LevelNumber.selectedLevel > levels.Count)
         {
-            levels[i] = Instantiate(levelPrefabs[i]);
+            LevelNumber.selectedLevel = 1;
         }
+
+        SceneManager.LoadScene("Game");
     }
 }

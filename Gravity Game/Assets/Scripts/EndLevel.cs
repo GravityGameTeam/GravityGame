@@ -61,15 +61,4 @@ public class EndLevel : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-
-    /*
-    public void SwitchLevel(int levelNumber)
-    {
-        foreach (GameObject level in levels)
-        {
-            level.SetActive(false);
-        }
-        levels[levelNumber - 1].SetActive(true);
-    }
-    */
 }
