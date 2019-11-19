@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private bool isGrounded;
     
+    
     void Start()
     {
 
@@ -165,9 +166,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
-        countdown1.beginCo();
-        
+        gameObject.transform.position = new Vector2(0, 0);
+
     }
     
     private bool AlmostEqual(float a, float b)

@@ -42,6 +42,7 @@ public class EndLevel : MonoBehaviour
         if (node.gameObject.CompareTag("EndPortal"))
         {
             gameObject.SetActive(appear);
+            Time.timeScale = 0f;
             LevelBeat();
 
         } ;
