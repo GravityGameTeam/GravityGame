@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 UP;
     private Vector2 LEFT;
     private Vector2 RIGHT;
-    
+
     //jump variables
     public float jumpForce;
     private bool isGrounded;
+    
     
     
     void Start()
@@ -160,13 +161,11 @@ public class PlayerMovement : MonoBehaviour
     
     private void Respawn()
     {
-        Countdown countdown1 = new Countdown();
-        
+
         rb.transform.position = new Vector2(0, 0);
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-        gameObject.transform.position = new Vector2(0, 0);
 
     }
     
