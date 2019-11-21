@@ -21,20 +21,8 @@ public class EndLevel : MonoBehaviour
     {
         gameObject.SetActive(appear);
         menuPanel.SetActive(false);
-        /*
-        foreach (GameObject level in levelPrefabs)
-        {
-            levels.Add(Instantiate(level));
-        }
-        */
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     public void OnTriggerEnter2D(Collider2D node)
     {
         Debug.Log("Collided");
