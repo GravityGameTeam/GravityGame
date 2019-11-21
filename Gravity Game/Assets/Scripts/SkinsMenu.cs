@@ -8,7 +8,7 @@ public class SkinsMenu : MonoBehaviour
 {
     public GameObject skinsButtonPrefab;
     public GameObject skinsButtonContainer;
-    public string skinName;
+    //public string skinName;
     
 
     private void Start()
@@ -21,15 +21,18 @@ public class SkinsMenu : MonoBehaviour
             container.GetComponent<Image>().sprite = thumbnail;
             container.transform.SetParent(skinsButtonContainer.transform, false);
 
-             skinName = thumbnail.name;
-            container.GetComponent<Button>().onClick.AddListener(() => SkinLoad(LevelNumber.skinPick));
+             string skinName = thumbnail.name;
+            container.GetComponent<Button>().onClick.AddListener(() => SkinLoad(skinName));
 
         }
     }
 
-    private void SkinLoad(string skinNumber)
+    private void SkinLoad(string skinName)
     {
-        skinName = skinNumber;
-        LevelNumber.skinPick = skinNumber;
+        
+        LevelNumber.skinPick = skinName;
+        Debug.Log(LevelNumber.skinPick);
+        
+        
     }
 }
