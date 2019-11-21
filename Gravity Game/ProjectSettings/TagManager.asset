@@ -8,6 +8,7 @@ TagManager:
   - EndPortal
   - Spike
   - music
+  - spawn
   layers:
   - Default
   - TransparentFX
