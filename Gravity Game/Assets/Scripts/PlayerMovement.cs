@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject countdownObject;
+    
     //basic ground movement
     public float gravityForce;
     public float movementForce;
@@ -161,12 +163,12 @@ public class PlayerMovement : MonoBehaviour
     
     private void Respawn()
     {
-
         rb.transform.position = new Vector2(0, 0);
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
+        countdownObject.GetComponent<Countdown>().beginCo();
     }
     
     private bool AlmostEqual(float a, float b)
