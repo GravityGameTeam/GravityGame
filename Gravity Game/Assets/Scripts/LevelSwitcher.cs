@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelSwitcher : MonoBehaviour
 {
     public List<GameObject> levelPrefabs = new List<GameObject>();
-
     private List<GameObject> levels = new List<GameObject>();
-    // Start is called before the first frame update
+    
     void Start()
     {
         foreach (GameObject levelPrefab in levelPrefabs)
@@ -19,7 +18,6 @@ public class LevelSwitcher : MonoBehaviour
         SelectLevel(LevelNumber.selectedLevel);
     }
 
-    // Update is called once per frame
     public void HideLevels()
     {
         foreach (GameObject level in levels)
@@ -41,7 +39,6 @@ public class LevelSwitcher : MonoBehaviour
         {
             LevelNumber.selectedLevel = 1;
         }
-
         SceneManager.LoadScene("Game");
     }
 }
