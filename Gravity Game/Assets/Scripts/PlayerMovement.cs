@@ -167,8 +167,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
-        countdownObject.GetComponent<Countdown>().beginCo();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
+        //countdownObject.GetComponent<Countdown>().beginCo();
     }
     
     private bool AlmostEqual(float a, float b)
