@@ -25,7 +25,8 @@ public class LevelsMenu : MonoBehaviour
 
     private void LevelLoad(string sceneName)
     {
-        LevelNumber.selectedLevel = 1;
+        int.TryParse(sceneName, out LevelNumber.selectedLevel );
+
         SceneManager.LoadScene("Game");
         Debug.Log("Loaded scene");
         Debug.Log(sceneName);
