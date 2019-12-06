@@ -24,7 +24,9 @@ public class Countdown : MonoBehaviour
         Time.timeScale = 0;
         float pauseTime = Time.realtimeSinceStartup + 3f;
         while (Time.realtimeSinceStartup < pauseTime)
+        {
             yield return 0;
+        }
         countdown.gameObject.SetActive(false);
         Time.timeScale = 1;
     }

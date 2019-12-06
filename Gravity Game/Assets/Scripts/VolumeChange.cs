@@ -17,7 +17,6 @@ public class VolumeChange : MonoBehaviour
     void Update()
     {
         _audioSource.volume = musicVolume;
-
     }
 
     public void SetVol(float vol)

@@ -7,15 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-
     public bool appear = true;
     
     public GameObject menuPanel;
 
-    //public List<GameObject> levelPrefabs = new List<GameObject>();
-
-    //private List<GameObject> levels = new List<GameObject>();
-    
     // Start is called before the first frame update
     public void Start()
     {
@@ -32,8 +27,7 @@ public class EndLevel : MonoBehaviour
             gameObject.SetActive(appear);
             Time.timeScale = 0f;
             LevelBeat();
-
-        } ;
+        }
     }
 
     public void LevelBeat()

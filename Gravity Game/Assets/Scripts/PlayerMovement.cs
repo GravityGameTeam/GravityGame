@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         DOWN = new Vector2(0, -gravityForce);
         UP = new Vector2(0, gravityForce);
@@ -135,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(int xYeet, int yYeet)
     {
-        //rb.velocity = new Vector2(rb.velocity.x, 0);
         Vector2 jumpForceToAdd = new Vector2(jumpForce * xYeet, jumpForce * yYeet);
         rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
     }
@@ -167,8 +165,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //resets scene
-        //countdownObject.GetComponent<Countdown>().beginCo();
     }
     
     private bool AlmostEqual(float a, float b)
