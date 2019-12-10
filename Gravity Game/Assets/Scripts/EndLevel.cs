@@ -33,6 +33,10 @@ public class EndLevel : MonoBehaviour
     public void LevelBeat()
     {
         menuPanel.SetActive(true);
+        if (LevelNumber.selectedLevel + 1 > LevelNumber.farthestLevel)
+        {
+            LevelNumber.farthestLevel = LevelNumber.farthestLevel + 1;
+        }
     }
 
     public void restart()
