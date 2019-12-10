@@ -23,7 +23,7 @@ public class LevelsMenu : MonoBehaviour
                 container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
                 n++;
 
-                if (n >= LevelNumber.farthestLevel)
+                if (n >= PlayerData.farthestLevel)
                 { 
                     break;
                 }
@@ -33,7 +33,7 @@ public class LevelsMenu : MonoBehaviour
 
     private void LevelLoad(string sceneName)
     {
-        int.TryParse(sceneName, out LevelNumber.selectedLevel);
+        int.TryParse(sceneName, out PlayerData.selectedLevel);
 
         SceneManager.LoadScene("Game");
         Debug.Log("Loaded scene");

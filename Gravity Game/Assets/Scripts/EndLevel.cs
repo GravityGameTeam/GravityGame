@@ -32,10 +32,12 @@ public class EndLevel : MonoBehaviour
 
     public void LevelBeat()
     {
+        PlayerData.scores[PlayerData.selectedLevel - 1] = 0f;
+        
         menuPanel.SetActive(true);
-        if (LevelNumber.selectedLevel + 1 > LevelNumber.farthestLevel)
+        if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
         {
-            LevelNumber.farthestLevel = LevelNumber.farthestLevel + 1;
+            PlayerData.farthestLevel = PlayerData.farthestLevel + 1;
         }
     }
 
