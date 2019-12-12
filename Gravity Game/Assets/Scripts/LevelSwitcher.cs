@@ -15,7 +15,7 @@ public class LevelSwitcher : MonoBehaviour
             GameObject newLevel = Instantiate(levelPrefab);
             levels.Add(newLevel);
         }
-        SelectLevel(LevelNumber.selectedLevel);
+        SelectLevel(PlayerData.selectedLevel);
     }
 
     public void HideLevels()
@@ -34,10 +34,10 @@ public class LevelSwitcher : MonoBehaviour
 
     public void NextLevel()
     {
-        LevelNumber.selectedLevel += 1;
-        if (LevelNumber.selectedLevel > levels.Count)
+        PlayerData.selectedLevel += 1;
+        if (PlayerData.selectedLevel > levels.Count)
         {
-            LevelNumber.selectedLevel = 1;
+            PlayerData.selectedLevel = 1;
         }
         SceneManager.LoadScene("Game");
     }

@@ -25,7 +25,7 @@ public class SkinsMenu : MonoBehaviour
 
     private void SkinLoad(string skinName)
     {
-        LevelNumber.skinPick = skinName;
-        Debug.Log(LevelNumber.skinPick);
+        PlayerData.skinPick = skinName;
+        Debug.Log(PlayerData.skinPick);
     }
 }
