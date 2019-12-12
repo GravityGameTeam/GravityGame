@@ -43,9 +43,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: StartingPLayer
+    uniqueID: 3729389847
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: MenuPanel
     uniqueID: 2292366677
+    locked: 0
+  - name: 
+    uniqueID: 3121998985
     locked: 0
