@@ -10,6 +10,7 @@ public class EndLevel : MonoBehaviour
     public bool appear = true;
     
     public GameObject menuPanel;
+    public GameObject timerManager;
 
     // Start is called before the first frame update
     public void Start()
@@ -32,21 +33,27 @@ public class EndLevel : MonoBehaviour
 
     public void LevelBeat()
     {
-        PlayerData.scores[PlayerData.selectedLevel - 1] = 0f;
+        PlayerData.scores[PlayerData.selectedLevel - 1] = timerManager.GetComponent<Timer>().getTimeElapsed();
+        Debug.Log(PlayerData.scores[PlayerData.selectedLevel - 1]);
+        if (PlayerData.scores[PlayerData.selectedLevel - 1] < PlayerData.highScores[PlayerData.selectedLevel - 1])
+        {
+            Debug.Log("New high score!");
+            PlayerData.highScores[PlayerData.selectedLevel - 1] = PlayerData.scores[PlayerData.selectedLevel - 1];
+        }
         
         menuPanel.SetActive(true);
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
         {
-            PlayerData.farthestLevel = PlayerData.farthestLevel + 1;
+            PlayerData.farthestLevel ++;
         }
     }
 
-    public void restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void quit()
+    public void Quit()
     {
         SceneManager.LoadScene("Menu");
     }

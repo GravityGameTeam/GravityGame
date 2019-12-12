@@ -8,5 +8,8 @@ public class PlayerData
     
     static public string skinPick = "";
 
-    static public List<float> scores = new List<float>(numberOfLevels);
+    static public List<float> scores = new List<float> {0f, 0f, 0f};
+    static public List<float> highScores = new List<float> {1000000f, 1000000f, 1000000f};
+
+    static private List<float> allTimeRecords = new List<float> {0.83f, 1000000f, 1000000f};
 }
