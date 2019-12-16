@@ -13,14 +13,14 @@ public class Pause : MonoBehaviour
         PauseMenu.SetActive(false);
     }
 
-    public void pause()
+    public void PauseGame()
     {
         Time.timeScale = 0f;
 
     }
 
     // Update is called once per frame
-    public void resume()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
 

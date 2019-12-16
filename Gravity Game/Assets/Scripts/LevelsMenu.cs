@@ -11,21 +11,29 @@ public class LevelsMenu : MonoBehaviour
 
     private void Start()
     {
+        int n = 0;
         Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
         foreach (Sprite thumbnail in thumbnails)
         {
-            GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
-            container.GetComponent<Image>().sprite = thumbnail;
-            container.transform.SetParent(levelsButtonContainer.transform,false);
+                GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
+                container.GetComponent<Image>().sprite = thumbnail;
+                container.transform.SetParent(levelsButtonContainer.transform, false);
 
-            string sceneName = thumbnail.name;
-            container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
+                string sceneName = thumbnail.name;
+                container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
+                n++;
+
+                if (n >= PlayerData.farthestLevel)
+                { 
+                    break;
+                }
         }
+        
     }
 
     private void LevelLoad(string sceneName)
     {
-        int.TryParse(sceneName, out LevelNumber.selectedLevel );
+        int.TryParse(sceneName, out PlayerData.selectedLevel);
 
         SceneManager.LoadScene("Game");
         Debug.Log("Loaded scene");

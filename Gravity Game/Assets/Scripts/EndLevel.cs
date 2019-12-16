@@ -7,15 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-
     public bool appear = true;
     
     public GameObject menuPanel;
+    public GameObject timerManager;
 
-    //public List<GameObject> levelPrefabs = new List<GameObject>();
-
-    //private List<GameObject> levels = new List<GameObject>();
-    
     // Start is called before the first frame update
     public void Start()
     {
@@ -32,21 +28,32 @@ public class EndLevel : MonoBehaviour
             gameObject.SetActive(appear);
             Time.timeScale = 0f;
             LevelBeat();
-
-        } ;
+        }
     }
 
     public void LevelBeat()
     {
+        PlayerData.scores[PlayerData.selectedLevel - 1] = timerManager.GetComponent<Timer>().getTimeElapsed();
+        Debug.Log(PlayerData.scores[PlayerData.selectedLevel - 1]);
+        if (PlayerData.scores[PlayerData.selectedLevel - 1] < PlayerData.highScores[PlayerData.selectedLevel - 1])
+        {
+            Debug.Log("New high score!");
+            PlayerData.highScores[PlayerData.selectedLevel - 1] = PlayerData.scores[PlayerData.selectedLevel - 1];
+        }
+        
         menuPanel.SetActive(true);
+        if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
+        {
+            PlayerData.farthestLevel ++;
+        }
     }
 
-    public void restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void quit()
+    public void Quit()
     {
         SceneManager.LoadScene("Menu");
     }

@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 4687022055628779679}
   - component: {fileID: 4724738513406511451}
   - component: {fileID: 3461472689842846148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spike 1.5
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1706,7 +1706,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 3842a4b3c7143474eb78c26754f85ef1, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2014,7 +2014,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96c8dcfab31b79e4681484a3f4d46843, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad4da9d8685db2546b985d3d13572da5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
