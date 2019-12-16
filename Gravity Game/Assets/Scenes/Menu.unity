@@ -129,7 +129,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 56435422}
-  - component: {fileID: 56435423}
   m_Layer: 5
   m_Name: LevelsMenu
   m_TagString: Untagged
@@ -159,18 +158,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &56435423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56435421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &91527172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1017,6 @@ GameObject:
   - component: {fileID: 387642500}
   - component: {fileID: 387642499}
   - component: {fileID: 387642498}
-  - component: {fileID: 387642502}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1123,18 +1109,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &387642502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387642497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec011bbe5946b543910b6d278a6ac1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &409305298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1617,6 @@ GameObject:
   - component: {fileID: 494568534}
   - component: {fileID: 494568533}
   - component: {fileID: 494568532}
-  - component: {fileID: 494568531}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1671,18 +1644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -211}
   m_SizeDelta: {x: 145.5, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &494568531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494568529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789d177904b0bd647ac6322b72778898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &494568532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1686,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494568533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1042324764}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &494568533
@@ -2125,7 +2097,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787222524}
-  - component: {fileID: 787222525}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2158,18 +2129,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &787222525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787222523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &803910468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2630,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037750977}
   m_CullTransparentMesh: 0
+--- !u!1 &1042324763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042324765}
+  - component: {fileID: 1042324764}
+  m_Layer: 0
+  m_Name: QuitManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1042324764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042324763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49581adacffff8f4db7af9fc735c3c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1042324765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042324763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 630.15393, y: 265.0326, z: -3264.762}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078294852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,7 +4232,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713139429}
-  - component: {fileID: 1713139430}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -4261,18 +4262,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1713139430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713139428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1745381885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,7 +4921,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021612862}
-  - component: {fileID: 2021612863}
   m_Layer: 5
   m_Name: SkinsMenu
   m_TagString: Untagged
@@ -4962,18 +4950,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1150, y: 537}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2021612863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021612861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47151f12eba85c140a5ec616205cddf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2068431478
 GameObject:
   m_ObjectHideFlags: 0
