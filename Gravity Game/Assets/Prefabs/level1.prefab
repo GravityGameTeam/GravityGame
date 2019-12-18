@@ -2050,8 +2050,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2979175384235441264}
+  - component: {fileID: 3148673010181257441}
   m_Layer: 0
-  m_Name: spawn
+  m_Name: SpawnPoint
   m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2071,3 +2072,15 @@ Transform:
   m_Father: {fileID: 1278082568926602811}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3148673010181257441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029152485892347981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1ecbdbd71f9254a96b1a35822aef92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

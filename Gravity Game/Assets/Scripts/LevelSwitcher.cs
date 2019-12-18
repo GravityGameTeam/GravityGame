@@ -30,6 +30,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         HideLevels();
         levels[levelNumber - 1].SetActive(true);
+        PlayerData.spawnPoint = levels[levelNumber - 1].GetComponentInChildren<SetSpawnPoint>().GetSpawnPoint();
     }
 
     public void NextLevel()

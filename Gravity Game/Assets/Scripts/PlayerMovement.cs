@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         LEFT = new Vector2(-gravityForce, 0);
         RIGHT = new Vector2(gravityForce, 0);
         Physics2D.gravity = DOWN;
+
+        this.transform.position = PlayerData.spawnPoint;
     }
 
     //Gets movement
@@ -165,6 +167,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
+
+        this.transform.position = PlayerData.spawnPoint;
     }
     
     private bool AlmostEqual(float a, float b)
