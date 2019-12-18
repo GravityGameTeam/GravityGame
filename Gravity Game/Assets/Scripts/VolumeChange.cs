@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class VolumeChange : MonoBehaviour
 {
-    private AudioSource _audioSource;
+    private AudioSource[] audioSource;
+    private int selectedTrack = 0;
 
-    private float musicVolume = 0.5f;
     // Start is called before the first frame update
+    
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>();
+        
+        if (Mathf.RoundToInt(Random.value * 100) == 1 /*comment out conditional and replace with false to disable rickroll*/)
+        {
+            selectedTrack = 1;
+            audioSource[0].volume = 0f;
+            audioSource[1].volume = 1f;
+        }
+        else
+        {
+            audioSource[0].volume = 0.5f;
+            audioSource[1].volume = 0f;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        _audioSource.volume = musicVolume;
-    }
-
+    
     public void SetVol(float vol)
     {
-        musicVolume = vol;
+        //prevents changing volume with rickroll
+        if (selectedTrack == 0)
+        {
+            audioSource[0].volume = vol;
+        }
     }
 }
