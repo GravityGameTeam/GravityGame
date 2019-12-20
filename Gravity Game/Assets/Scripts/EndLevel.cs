@@ -19,6 +19,17 @@ public class EndLevel : MonoBehaviour
         menuPanel.SetActive(false);
     }
 
+    void Update()
+    {
+        //automatic level beat
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            gameObject.SetActive(appear);
+            Time.timeScale = 0f;
+            LevelBeat();
+        }
+    }
+
     public void OnTriggerEnter2D(Collider2D node)
     {
         Debug.Log("Collided");
