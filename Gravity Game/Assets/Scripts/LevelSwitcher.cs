@@ -15,6 +15,7 @@ public class LevelSwitcher : MonoBehaviour
             GameObject newLevel = Instantiate(levelPrefab);
             levels.Add(newLevel);
         }
+        
         SelectLevel(PlayerData.selectedLevel);
     }
 
@@ -30,6 +31,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         HideLevels();
         levels[levelNumber - 1].SetActive(true);
+        
         PlayerData.spawnPoint = levels[levelNumber - 1].GetComponentInChildren<SetSpawnPoint>().GetSpawnPoint();
     }
 

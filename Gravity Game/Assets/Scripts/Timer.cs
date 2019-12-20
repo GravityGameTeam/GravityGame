@@ -9,7 +9,6 @@ public class Timer : MonoBehaviour
     private float startTime;
     public float timeElapsed;
     
-    private bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,22 +18,12 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (finished)
-        {
-            return;
-        }
-
         timeElapsed = Time.time - startTime;
 
         string minutes = ((int) timeElapsed / 60).ToString();
         string seconds = (timeElapsed % 60).ToString("f2");
 
         timerText.text = minutes + ":" + seconds;
-    }
-
-    public void Finish()
-    {
-        finished = true;
     }
 
     public float getTimeElapsed()
