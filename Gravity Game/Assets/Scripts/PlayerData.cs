@@ -13,8 +13,8 @@ public class PlayerData
     
     static public Vector2 spawnPoint = new Vector2(0f, 0f);
 
-    static public List<float> scores = new List<float> {0f, 0f, 0f};
-    static public List<float> highScores = new List<float> {1000000f, 1000000f, 1000000f};
+    static public List<float> scores = new List<float> {0f, 0f, 0f, 0f};
+    static public List<float> highScores = new List<float> {1000000f, 1000000f, 1000000f, 1000000f};
 
-    static private List<float> allTimeRecords = new List<float> {0.81f, 1.11f, 3.02f};
+    static private List<float> allTimeRecords = new List<float> {0.81f, 1.11f, 3.02f, 1000000f};
 }
