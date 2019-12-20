@@ -15,6 +15,7 @@ public class LevelSwitcher : MonoBehaviour
             GameObject newLevel = Instantiate(levelPrefab);
             levels.Add(newLevel);
         }
+        
         SelectLevel(PlayerData.selectedLevel);
     }
 

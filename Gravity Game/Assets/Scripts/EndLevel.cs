@@ -7,15 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-    public bool appear = true;
-    
     public GameObject menuPanel;
     public GameObject timerManager;
 
     // Start is called before the first frame update
     public void Start()
     {
-        gameObject.SetActive(appear);
         menuPanel.SetActive(false);
     }
 
@@ -24,7 +21,6 @@ public class EndLevel : MonoBehaviour
         //automatic level beat
         if (Input.GetKeyDown(KeyCode.P))
         {
-            gameObject.SetActive(appear);
             Time.timeScale = 0f;
             LevelBeat();
         }
@@ -33,10 +29,8 @@ public class EndLevel : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D node)
     {
         Debug.Log("Collided");
-        appear = false;
         if (node.gameObject.CompareTag("EndPortal"))
         {
-            gameObject.SetActive(appear);
             Time.timeScale = 0f;
             LevelBeat();
         }
