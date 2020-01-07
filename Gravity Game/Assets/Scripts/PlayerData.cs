@@ -7,7 +7,7 @@ public class PlayerData
 {
     static public int selectedLevel = 1;
     static public int farthestLevel = 1;
-    static public readonly int numberOfLevels = 3;
+    static public readonly int numberOfLevels = 5;
     
     static public string skinPick = "";
     
