@@ -31,10 +31,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private bool isGrounded;
     
-    
-    
     void Start()
     {
+        gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         DOWN = new Vector2(0, -gravityForce);
         UP = new Vector2(0, gravityForce);
@@ -43,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.gravity = DOWN;
 
         this.transform.position = PlayerData.spawnPoint;
+        gameObject.SetActive(true);
     }
 
     //Gets movement
