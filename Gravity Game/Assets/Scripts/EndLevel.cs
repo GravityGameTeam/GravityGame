@@ -28,7 +28,6 @@ public class EndLevel : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D node)
     {
-        Debug.Log("Collided");
         if (node.gameObject.CompareTag("EndPortal"))
         {
             Time.timeScale = 0f;

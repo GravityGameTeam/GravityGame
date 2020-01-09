@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     
     //gravity
+    private bool antigrav = false;
     private int gAxis;
     private readonly int Y = 0;
     private readonly int X = 1;
@@ -31,10 +32,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     private bool isGrounded;
     
-    
-    
     void Start()
     {
+        gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         DOWN = new Vector2(0, -gravityForce);
         UP = new Vector2(0, gravityForce);
@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.gravity = DOWN;
 
         this.transform.position = PlayerData.spawnPoint;
+        gameObject.SetActive(true);
     }
 
     //Gets movement
@@ -84,6 +85,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Antigrav"))
+        {
+            Debug.Log("Entered antigrav");
+            antigrav = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Antigrav"))
+        {
+            Debug.Log("Exited antigrav");
+            antigrav = false;
+        }
+    }
+
     //Gets user input
     private void GetMove()
     {
@@ -112,25 +131,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void SwitchGravity()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!antigrav)
         {
-            Physics2D.gravity = UP;
-            gAxis = Y;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Physics2D.gravity = DOWN;
-            gAxis = Y;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Physics2D.gravity = LEFT;
-            gAxis = X;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Physics2D.gravity = RIGHT;
-            gAxis = X;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Physics2D.gravity = UP;
+                gAxis = Y;
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Physics2D.gravity = DOWN;
+                gAxis = Y;
+            }
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Physics2D.gravity = LEFT;
+                gAxis = X;
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Physics2D.gravity = RIGHT;
+                gAxis = X;
+            }
         }
     }
 
@@ -180,5 +205,4 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
-    
 }
