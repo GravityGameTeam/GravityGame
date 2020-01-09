@@ -59,6 +59,7 @@ public class EndLevel : MonoBehaviour
 
     public void Quit()
     {
+        PlayerData.loadStartScreen = false;
         SceneManager.LoadScene("Menu");
     }
 }
