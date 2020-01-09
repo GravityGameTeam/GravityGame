@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SetSpawnPoint : MonoBehaviour
 {
-    public Vector2 GetSpawnPoint()
+    //attached to SpawnPoint object in every level. Accessed when that level loads, and saves position in PlayerData.
+    public Vector2 GetSpawnPoint() 
     {
         return this.transform.position;
     }
