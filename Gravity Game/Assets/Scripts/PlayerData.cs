@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PlayerData //a static class that stores all data held between scenes
 {
-    static public int selectedLevel = 1;
-    static public int farthestLevel = 1;
-    static public readonly int numberOfLevels = 6;
+    static public int selectedLevel = 1; //stores level to be loaded on Game Start
+    static public int farthestLevel = 1; //controls locked levels
+    static public readonly int numberOfLevels = 7;
 
     static public bool loadStartScreen = true;
     
