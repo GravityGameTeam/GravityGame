@@ -5,11 +5,11 @@ using UnityEngine;
 using System.Threading;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
 {
-    public GameObject countdownObject;
+    public GameObject countdownObject; //what's it for? IDK
     
-    //basic ground movement
+    //basic ground movement and forces
     public float gravityForce;
     public float movementForce;
     public float maxMovementSpeed;
@@ -19,59 +19,61 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     
     //gravity
-    private bool antigrav = false;
-    private int gAxis;
-    private readonly int Y = 0;
+    private bool antigrav = false; //zones where gravity can't change
+    private int gAxis; //0 or 1, X or Y, controls conditional statements that alter movement based on grav direction
+    private readonly int Y = 0; //statics used for the above
     private readonly int X = 1;
-    private Vector2 DOWN;
+    private Vector2 DOWN; //statics for grav direction, not assigned yet, just in case we change gravityForce
     private Vector2 UP;
     private Vector2 LEFT;
     private Vector2 RIGHT;
 
     //jump variables
     public float jumpForce;
-    private bool isGrounded;
+    private bool isGrounded; //can only jump if it's true
     
     void Start()
     {
         gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
-        DOWN = new Vector2(0, -gravityForce);
+        
+        DOWN = new Vector2(0, -gravityForce); //initializes gravity statics and sets it to down
         UP = new Vector2(0, gravityForce);
         LEFT = new Vector2(-gravityForce, 0);
         RIGHT = new Vector2(gravityForce, 0);
         Physics2D.gravity = DOWN;
 
-        this.transform.position = PlayerData.spawnPoint;
+        this.transform.position = PlayerData.spawnPoint; //sends you to spawn point
         gameObject.SetActive(true);
     }
 
     //Gets movement
     void Update()
     {
-        GetMove();
-        SwitchGravity();
+        GetMove(); //gets all movement
+        SwitchGravity(); //checks if gravity's changing and alters it
     }
 
-    //Creates a force and changes it based on the gravity axis, then applies it
-    //Changes the ground movement speed so you can't be Sonic
+    //Loads after Update, converts values from GetMove to forces
     void FixedUpdate()
     {
+        //Creates a force and changes it based on the gravity axis, then applies it
         Vector2 forceToAdd = gAxis == Y ? new Vector2(movementForce * movementDirection, 0) : new Vector2(0, movementForce * movementDirection);
-        
         rb.AddForce(forceToAdd);
+        
+        //Changes the ground movement speed so you can't be Sonic
         Slow();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other) //handles all collisions
     {
-        if (other.gameObject.CompareTag("Spike"))
+        if (other.gameObject.CompareTag("Spike")) //kills you if you hit a spike
         {
             gameObject.SetActive(false);
             Respawn();
             gameObject.SetActive(true);
         }
-        else if (other.gameObject.CompareTag("Ground"))
+        else if (other.gameObject.CompareTag("Ground")) //lets you jump if touching ground
         {
             isGrounded = true;
         }
@@ -79,15 +81,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground")) //if not touching ground, you can't jump
         {
             isGrounded = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) //uses triggers to check for zones
     {
-        if (other.gameObject.CompareTag("Antigrav"))
+        if (other.gameObject.CompareTag("Antigrav")) //if you enter antigrav, prevent grav switching
         {
             Debug.Log("Entered antigrav");
             antigrav = true;
@@ -96,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Antigrav"))
+        if (other.gameObject.CompareTag("Antigrav")) //if you leave antigrav, allow grav switching
         {
             Debug.Log("Exited antigrav");
             antigrav = false;
@@ -104,11 +106,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Gets user input
-    private void GetMove()
+    private void GetMove() //gets horizontal input
     {
-        movementDirection = Input.GetAxis(gAxis == Y ? "Horizontal" : "Vertical");
+        movementDirection = Input.GetAxis(gAxis == Y ? "Horizontal" : "Vertical"); //only accepts movement input on axis perpendicular to gAxis, then stores it
         
-        if (isGrounded && (gAxis == Y && AlmostEqual(rb.velocity.y, 0) || gAxis == X && AlmostEqual(rb.velocity.x, 0)))
+        //jump functions
+        if (isGrounded && (gAxis == Y && AlmostEqual(rb.velocity.y, 0) || gAxis == X && AlmostEqual(rb.velocity.x, 0))) //to jump, must be grounded, and must have 0 velocity in direction of gAxis
         {
             if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -128,15 +131,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    
+    //Gets WASD input, not forces, and alters gravity
     private void SwitchGravity()
     {
-        if (!antigrav)
+        if (!antigrav) //won't work in antigrav zones
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                Physics2D.gravity = UP;
-                gAxis = Y;
+                Physics2D.gravity = UP; //uses static Vector2
+                gAxis = Y; //changes gAxis
             }
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -158,18 +162,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-    private void Jump(int xYeet, int yYeet)
+    
+    private void Jump(int xYeet, int yYeet) //jump takes x and y force parameters so you can jump in any direction with the same function.
     {
-        Vector2 jumpForceToAdd = new Vector2(jumpForce * xYeet, jumpForce * yYeet);
-        rb.AddForce(jumpForceToAdd, ForceMode2D.Impulse);
+        //you multiply the jump force by the parameters. 0 means no movement in that direction, 1 means + movement, -1 means - movement. It's converted into a force and applied.
+        rb.AddForce(new Vector2(jumpForce * xYeet, jumpForce * yYeet), ForceMode2D.Impulse);
     }
 
-    private void Slow()
+    private void Slow() //prevents infinite acceleration, but only on axis perpendicular to gravity so falling isn't slowed
     {
-        float velocity = gAxis == Y ? rb.velocity.x : rb.velocity.y;
+        float velocity = gAxis == Y ? rb.velocity.x : rb.velocity.y; //gets only the x or y component of the player's current velocity
         
-        if (velocity > maxMovementSpeed)
+        if (velocity > maxMovementSpeed) //then constrains the magnitude of that component
         {
             velocity = maxMovementSpeed;
         }
@@ -178,25 +182,24 @@ public class PlayerMovement : MonoBehaviour
             velocity = -maxMovementSpeed;
         }
         
-        if (movementDirection == 0)
+        if (movementDirection == 0) //if no force is being applied by arrow keys, apply friction
         {
             velocity *= groundFrictionLevel;
         }
 
-        rb.velocity = gAxis == Y ? new Vector2(velocity, rb.velocity.y) : new Vector2(rb.velocity.x, velocity);
+        rb.velocity = gAxis == Y ? new Vector2(velocity, rb.velocity.y) : new Vector2(rb.velocity.x, velocity); //puts removed component back into velocity vector.
     }
     
-    private void Respawn()
+    private void Respawn() //called upon spike contact
     {
-        rb.transform.position = new Vector2(0, 0);
+        //sends you back to spawn, resets all vectors to default
+        rb.transform.position = PlayerData.spawnPoint;
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
-
-        this.transform.position = PlayerData.spawnPoint;
     }
     
-    private bool AlmostEqual(float a, float b)
+    private bool AlmostEqual(float a, float b) //compares floats
     {
         if (Math.Abs(a - b) < 0.00001f)
         {
