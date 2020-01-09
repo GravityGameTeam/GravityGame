@@ -9,6 +9,7 @@ public class EndLevel : MonoBehaviour
 {
     public GameObject menuPanel;
     public GameObject timerManager;
+    public GameObject player;
 
     // Start is called before the first frame update
     public void Start()
@@ -22,6 +23,7 @@ public class EndLevel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Time.timeScale = 0f;
+            player.SetActive(false);
             LevelBeat();
         }
     }
@@ -31,6 +33,7 @@ public class EndLevel : MonoBehaviour
         if (node.gameObject.CompareTag("EndPortal"))
         {
             Time.timeScale = 0f;
+            player.SetActive(false);
             LevelBeat();
         }
     }
