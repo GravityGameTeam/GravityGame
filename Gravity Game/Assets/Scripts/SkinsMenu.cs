@@ -23,7 +23,7 @@ public class SkinsMenu : MonoBehaviour
         }
     }
 
-    private void SkinLoad(string skinName)
+    private void SkinLoad(string skinName) //when a button's clicked, saves the image name in PlayerData. Game accesses this on load.
     {
         PlayerData.skinPick = skinName;
         Debug.Log(PlayerData.skinPick);

@@ -6,6 +6,9 @@ using UnityEngine;
 public class SkinsChanger : MonoBehaviour
 {
     public GameObject player;
+    
+    //This should be a switch statement? Probably.
+    //It updates the player's appearance based on PlayerData once Game loads.
     public void Start()
     {
         if (PlayerData.skinPick == "Skins_0")

@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData
+public class PlayerData //a static class that stores all data held between scenes
 {
-    static public int selectedLevel = 1;
-    static public int farthestLevel = 1;
-    static public readonly int numberOfLevels = 6;
+    static public int selectedLevel = 1; //the level that will be loaded on Game start
+    static public int farthestLevel = 1; //controls locked levels
+    static public readonly int numberOfLevels = 7; //serves no purpose yet
     
-    static public string skinPick = "";
+    static public string skinPick = ""; //assigned by skin picker
     
-    static public Vector2 spawnPoint = new Vector2(0f, 0f);
+    static public Vector2 spawnPoint = new Vector2(0f, 0f); //changed based on level
 
     static public List<float> scores = new List<float>
     {
@@ -34,13 +34,13 @@ public class PlayerData
         1000000f
     };
 
-    static private List<float> allTimeRecords = new List<float>
+    static private readonly List<float> allTimeRecords = new List<float>
     {
         0.81f, 
         1.11f, 
         3.02f, 
         6.39f, 
-        45.53f, 
+        4.58f, 
         1000000f, 
         1000000f
     };
