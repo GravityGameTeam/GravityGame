@@ -149,8 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8744eafd3b93d4783a1f975a1e1216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMenu: {fileID: 787222523}
-  titleMenu: {fileID: 526328236}
 --- !u!4 &4988755
 Transform:
   m_ObjectHideFlags: 0
@@ -1881,7 +1879,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494568529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67283cfacc23ca844901dcd6ddf9bc1e, type: 2}
   m_CullingMode: 0
@@ -1907,7 +1905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &526328237
 Transform:
   m_ObjectHideFlags: 0
@@ -2257,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787222524
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2717,7 +2715,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944767311}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67283cfacc23ca844901dcd6ddf9bc1e, type: 2}
   m_CullingMode: 0
@@ -2926,7 +2924,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078294852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67283cfacc23ca844901dcd6ddf9bc1e, type: 2}
   m_CullingMode: 0
@@ -4107,7 +4105,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653306558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67283cfacc23ca844901dcd6ddf9bc1e, type: 2}
   m_CullingMode: 0
