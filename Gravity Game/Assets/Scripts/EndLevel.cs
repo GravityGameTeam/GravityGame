@@ -10,6 +10,7 @@ public class EndLevel : MonoBehaviour
     public GameObject menuPanel;
     public GameObject timerManager;
     public GameObject player;
+    public GameObject scoringManager;
 
     // Start is called before the first frame update
     public void Start()
@@ -52,7 +53,9 @@ public class EndLevel : MonoBehaviour
         }
         
         //shows end level screen
+        
         menuPanel.SetActive(true);
+        scoringManager.GetComponent<Scoring>().AssignStars();
         
         //if a new level was beaten, unlock the next one
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
