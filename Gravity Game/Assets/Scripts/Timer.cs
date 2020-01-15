@@ -28,6 +28,9 @@ public class Timer : MonoBehaviour
 
     public float getTimeElapsed()
     {
+        PlayerData.time = timeElapsed;
         return timeElapsed;
     }
+
+
 }
