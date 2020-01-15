@@ -731,6 +731,7 @@ MonoBehaviour:
   menuPanel: {fileID: 1191205616}
   timerManager: {fileID: 662104124}
   player: {fileID: 1266111218}
+  scoringManager: {fileID: 777879346}
 --- !u!4 &300756235
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,7 +1039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &370860824
 Transform:
   m_ObjectHideFlags: 0
@@ -3555,6 +3556,7 @@ MonoBehaviour:
   menuPanel: {fileID: 1191205616}
   timerManager: {fileID: 662104124}
   player: {fileID: 1266111218}
+  scoringManager: {fileID: 777879346}
 --- !u!61 &1266111220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3857,7 +3859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1299405745
 Transform:
   m_ObjectHideFlags: 0
@@ -4380,7 +4382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1583185381
 Transform:
   m_ObjectHideFlags: 0
@@ -4978,7 +4980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1793940051
 Transform:
   m_ObjectHideFlags: 0

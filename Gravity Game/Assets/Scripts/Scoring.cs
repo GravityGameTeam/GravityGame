@@ -13,8 +13,8 @@ public class Scoring : MonoBehaviour
     {
         float[][] times;
         times = new float[20][];
-        times[1] = new float[] {1,2,3};
-        times[2] = new float[] {1,2,3};
+        times[1] = new float[] {1.2f,5,9};
+        times[2] = new float[] {2f,7.5f,12f};
         times[3] = new float[] {};
 
         if (PlayerData.time < times[PlayerData.selectedLevel][2])
