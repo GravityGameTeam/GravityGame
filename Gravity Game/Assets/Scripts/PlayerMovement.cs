@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
         Slow();
     }
 
-    private void OnCollisionEnter2D(Collision2D other) //handles all collisions
+    private void OnCollisionStay2D(Collision2D other) //handles all collisions
     {
         if (other.gameObject.CompareTag("Spike")) //kills you if you hit a spike
         {
@@ -110,8 +110,11 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
     {
         movementDirection = Input.GetAxis(gAxis == Y ? "Horizontal" : "Vertical"); //only accepts movement input on axis perpendicular to gAxis, then stores it
         
+        Debug.Log("Grounded: " + isGrounded);
+        Debug.Log("gAxis velocity: " + (gAxis == Y ? rb.velocity.y : rb.velocity.x));
+        
         //jump functions
-        if (isGrounded && (gAxis == Y && AlmostEqual(rb.velocity.y, 0) || gAxis == X && AlmostEqual(rb.velocity.x, 0))) //to jump, must be grounded, and must have 0 velocity in direction of gAxis
+        if (isGrounded && AlmostEqual((gAxis == Y ? rb.velocity.y : rb.velocity.x), 0)) //to jump, must be grounded, and must have 0 velocity in direction of gAxis
         {
             if (Physics2D.gravity == DOWN && Input.GetKeyDown(KeyCode.UpArrow))
             {
