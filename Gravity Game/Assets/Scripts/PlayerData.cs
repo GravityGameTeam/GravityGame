@@ -7,7 +7,7 @@ public class PlayerData //a static class that stores all data held between scene
 {
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
     static public int farthestLevel = 1; //controls locked levels
-    static public readonly int numberOfLevels = 7;
+    static public readonly int numberOfLevels = 8;
 
     static public bool loadStartScreen = true;
     
@@ -26,7 +26,8 @@ public class PlayerData //a static class that stores all data held between scene
         0f, 
         0f, 
         0f, 
-        0f
+        0f,
+        0f,
     };
     static public List<float> highScores = new List<float>
     {
@@ -36,7 +37,8 @@ public class PlayerData //a static class that stores all data held between scene
         1000000f, 
         1000000f, 
         1000000f, 
-        1000000f
+        1000000f,
+        1000000f,
     };
 
     static private readonly List<float> allTimeRecords = new List<float>
@@ -47,6 +49,7 @@ public class PlayerData //a static class that stores all data held between scene
         6.39f, 
         4.58f, 
         1000000f, 
-        1000000f
+        1000000f,
+        1000000f,
     };
 }
