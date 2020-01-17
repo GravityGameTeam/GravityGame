@@ -2042,7 +2042,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877588342}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2198,8 +2198,8 @@ MonoBehaviour:
   - {fileID: 8097914300928801007, guid: ad7728561337fef4bbcbc434f59152e5, type: 3}
   - {fileID: 5222916404476287841, guid: 5328f3b12f2318f4983b44a4404232f0, type: 3}
   - {fileID: 4614893413778765035, guid: 665b0e42a1ce2354aa5529e8543b850a, type: 3}
-  - {fileID: 3435568555801023783, guid: ce259addc986b6247a007b7245166faf, type: 3}
   - {fileID: 3740137107261281645, guid: 4d4bb2ca3e8cf404a8c25fde559c9b16, type: 3}
+  - {fileID: 8697108970960551116, guid: ce259addc986b6247a007b7245166faf, type: 3}
 --- !u!4 &933384338
 Transform:
   m_ObjectHideFlags: 0
@@ -4863,7 +4863,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787026298}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
