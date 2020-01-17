@@ -65,6 +65,14 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
         Slow();
     }
 
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground")) //if not touching ground, you can't jump
+        {
+            isGrounded = false;
+        }
+    }
+    
     private void OnCollisionStay2D(Collision2D other) //handles all collisions
     {
         if (other.gameObject.CompareTag("Spike")) //kills you if you hit a spike
@@ -76,14 +84,6 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
         else if (other.gameObject.CompareTag("Ground")) //lets you jump if touching ground
         {
             isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground")) //if not touching ground, you can't jump
-        {
-            isGrounded = false;
         }
     }
 
@@ -109,9 +109,6 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
     private void GetMove() //gets horizontal input
     {
         movementDirection = Input.GetAxis(gAxis == Y ? "Horizontal" : "Vertical"); //only accepts movement input on axis perpendicular to gAxis, then stores it
-        
-        Debug.Log("Grounded: " + isGrounded);
-        Debug.Log("gAxis velocity: " + (gAxis == Y ? rb.velocity.y : rb.velocity.x));
         
         //jump functions
         if (isGrounded && AlmostEqual((gAxis == Y ? rb.velocity.y : rb.velocity.x), 0)) //to jump, must be grounded, and must have 0 velocity in direction of gAxis
