@@ -11,8 +11,10 @@ public class LevelsMenu : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(PlayerData.farthestLevel);
         //procedurally generates each level button in a row
         int n = 0;
+        Debug.Log(PlayerData.farthestLevel);
         Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
         foreach (Sprite thumbnail in thumbnails)
         {
@@ -26,7 +28,7 @@ public class LevelsMenu : MonoBehaviour
 
             //won't load levels that haven't been unlocked
             if (n >= PlayerData.farthestLevel)
-            { 
+            {
                 break;
             }
         }
