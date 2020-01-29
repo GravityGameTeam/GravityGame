@@ -7,10 +7,12 @@ public class Pause : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject PauseMenu;
+    public GameObject PauseButton;
 
     private void Start()
     {
         PauseMenu.SetActive(false);
+        PauseButton.SetActive(false); //hides the button by default, it appears when countdown ends
     }
 
     public void PauseGame()

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Countdown : MonoBehaviour
 {
     public GameObject countdown;
+    public GameObject remoteGravityReset;
+    public GameObject pauseButton;
 
     // Start is called before the first frame update
     public void Start()
@@ -29,6 +31,9 @@ public class Countdown : MonoBehaviour
         }
         countdown.gameObject.SetActive(false);
         Time.timeScale = 1;
+
+        remoteGravityReset.GetComponent<PlayerMovement>().ResetGravity(); //this remotely switches gravity to down
+        pauseButton.SetActive(true); //shows hidden pause button when countdown ends
     }
 
 }
