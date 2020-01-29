@@ -16,7 +16,7 @@ public class Scoring : MonoBehaviour
         times[1] = new [] {1.2f,5,9};
         times[2] = new [] {2f,7.5f,12f};
         times[3] = new [] {4f,8f,16f};
-        times[4] = new [] {1.2f,5,9};
+        times[4] = new [] {5f,10,17};
         times[5] = new [] {2f,7.5f,12f};
         times[6] = new [] {4f,8f,16f};
         times[7] = new [] {2f,7.5f,12f};
