@@ -43,7 +43,7 @@ public class EndLevel : MonoBehaviour
     {
         //Logs the timer score, accessing timer
         PlayerData.scores[PlayerData.selectedLevel - 1] = timerManager.GetComponent<Timer>().getTimeElapsed();
-        Debug.Log(PlayerData.scores[PlayerData.selectedLevel - 1]);
+        Debug.Log("Player's score: " + PlayerData.scores[PlayerData.selectedLevel - 1]);
         
         //stores high scores
         if (PlayerData.scores[PlayerData.selectedLevel - 1] < PlayerData.highScores[PlayerData.selectedLevel - 1])
