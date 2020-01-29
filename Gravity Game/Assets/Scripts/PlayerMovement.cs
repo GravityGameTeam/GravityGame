@@ -36,12 +36,12 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
     {
         gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
-        
+
         DOWN = new Vector2(0, -gravityForce); //initializes gravity statics and sets it to down
         UP = new Vector2(0, gravityForce);
         LEFT = new Vector2(-gravityForce, 0);
         RIGHT = new Vector2(gravityForce, 0);
-        Physics2D.gravity = DOWN;
+        //Physics2D.gravity = DOWN; //note that gravity is initialized remotely from the Countdown class.
 
         this.transform.position = PlayerData.spawnPoint; //sends you to spawn point
         gameObject.SetActive(true);
@@ -197,6 +197,12 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
+    }
+
+    public void ResetGravity()
+    {
+        Physics2D.gravity = DOWN;
+        gAxis = Y;
     }
     
     private bool AlmostEqual(float a, float b) //compares floats

@@ -1465,6 +1465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 1755663654}
+  remoteGravityReset: {fileID: 1266111218}
+  pauseButton: {fileID: 1322581173}
 --- !u!4 &702085870
 Transform:
   m_ObjectHideFlags: 0
@@ -4062,6 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1780292570}
+  PauseButton: {fileID: 1322581173}
 --- !u!4 &1365509837
 Transform:
   m_ObjectHideFlags: 0
