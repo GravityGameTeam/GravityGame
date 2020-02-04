@@ -22,7 +22,7 @@ public class Scoring : MonoBehaviour
         times[7] = new [] {2f,7.5f,12f};
         times[8] = new [] {4f,8f,16f};
         times[9] = new[] {4f, 7f, 15f};
-        times[10] = new[] {0f, 0f, 0f};
+        times[10] = new[] {15f, 45f, 90f};
         //times[4] = new [] {};
 
         if (PlayerData.time < times[PlayerData.selectedLevel][2])
