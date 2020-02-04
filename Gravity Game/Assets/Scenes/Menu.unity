@@ -910,11 +910,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 355613832}
   m_OnClick:
@@ -1720,11 +1720,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 427917821}
   m_OnClick:
@@ -2207,11 +2207,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 494568533}
   m_OnClick:
@@ -2302,7 +2302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &526328237
 Transform:
   m_ObjectHideFlags: 0
@@ -2763,7 +2763,6 @@ RectTransform:
   - {fileID: 1653306559}
   - {fileID: 1078294853}
   - {fileID: 494568530}
-  - {fileID: 1149860936}
   m_Father: {fileID: 387642501}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3127,11 +3126,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 944767314}
   m_OnClick:
@@ -3716,11 +3715,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1078294856}
   m_OnClick:
@@ -4042,36 +4041,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1149860935
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1149860936}
-  m_Layer: 0
-  m_Name: Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1149860936
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149860935}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 787222524}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162655474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4827,11 +4796,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1473732428}
   m_OnClick:
@@ -4972,11 +4941,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1653306562}
   m_OnClick:
@@ -6878,11 +6847,11 @@ MonoBehaviour:
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
-    m_NormalTrigger: 
-    m_HighlightedTrigger: 
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2068431482}
   m_OnClick:
