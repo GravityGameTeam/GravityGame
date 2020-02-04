@@ -6,7 +6,9 @@ public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public Transform[] points;
+    
     private Vector2 newPosition;
+    private int pointIndex = 0;
     private bool readyToMove = true;
     
     // Start is called before the first frame update
@@ -23,9 +25,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void ChangePosition()
     {
-        foreach (Transform point in points)
+        if (readyToMove)
         {
-            //
+            readyToMove = false;
+            transform.position = Vector2.Lerp(transform.position, points[pointIndex].position, Time.deltaTime);
         }
     }
 }
