@@ -8,6 +8,8 @@ public class LevelsMenu : MonoBehaviour
 {
     public GameObject levelsButtonPrefab;
     public GameObject levelsButtonContainer;
+    public Text textbox;
+
 
     private void Start()
     {
@@ -31,6 +33,10 @@ public class LevelsMenu : MonoBehaviour
                 break;
             }
         }
+        
+        //textbox = GetComponent<Text>();
+        //textbox.text = "abc";
+
     }
 
     //sets the target level using PlayerData, then switches scenes. Game scene loads level on Start.
@@ -44,4 +50,6 @@ public class LevelsMenu : MonoBehaviour
         Debug.Log("Loaded scene");
         Debug.Log(sceneName);
     }
+    
+    
 }
