@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6690906599097217792}
   - component: {fileID: 885643428371156169}
   m_Layer: 0
-  m_Name: big box (11)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 5004713877578334330}
   - component: {fileID: 5533772857391466187}
   m_Layer: 0
-  m_Name: big box (22)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 5568904469721793768}
   - component: {fileID: 5751151503868462643}
   m_Layer: 0
-  m_Name: big box (13)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 7813054240947686302}
   - component: {fileID: 425902843200864053}
   m_Layer: 0
-  m_Name: big box (7)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 2277570710876765871}
   - component: {fileID: 2817821516971594291}
   m_Layer: 0
-  m_Name: big box (8)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 4943364640625832181}
   - component: {fileID: 187171255602351497}
   m_Layer: 0
-  m_Name: big box (20)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 5568056905735749367}
   - component: {fileID: 7377297731556877066}
   m_Layer: 0
-  m_Name: big box (19)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 7820725863056823133}
   - component: {fileID: 7598555661834201376}
   m_Layer: 0
-  m_Name: big box (15)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 2902856304069767593}
   - component: {fileID: 3703820959800532870}
   m_Layer: 0
-  m_Name: big box (9)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 1756743185336958456}
   - component: {fileID: 7142988911178588412}
   m_Layer: 0
-  m_Name: big box (16)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,6 +1538,86 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &4687430172774863674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4240745512649328064}
+  - component: {fileID: 7000879127275858213}
+  m_Layer: 0
+  m_Name: background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4240745512649328064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687430172774863674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 100}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3801960101654441492}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &7000879127275858213
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687430172774863674}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -100
+  m_Sprite: {fileID: 21300000, guid: c9a68c979eb2d6f4183645d58f6274f4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 38.399998, y: 21.599998}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4872655247025726349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1631,7 @@ GameObject:
   - component: {fileID: 6042955073323939352}
   - component: {fileID: 5575627863452575786}
   m_Layer: 0
-  m_Name: big box (6)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1757,6 +1837,7 @@ Transform:
   - {fileID: 4036368360340872257}
   - {fileID: 1539491797287694812}
   - {fileID: 4951037081985153193}
+  - {fileID: 4240745512649328064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1773,7 +1854,7 @@ GameObject:
   - component: {fileID: 5310992749146951387}
   - component: {fileID: 3138585565455408992}
   m_Layer: 0
-  m_Name: big box (18)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,7 +1983,7 @@ GameObject:
   - component: {fileID: 4355485461998447379}
   - component: {fileID: 2954670603589936144}
   m_Layer: 0
-  m_Name: big box (17)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2128,7 +2209,7 @@ GameObject:
   - component: {fileID: 2819379260748755573}
   - component: {fileID: 603625705968435727}
   m_Layer: 0
-  m_Name: big box (10)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2257,7 +2338,7 @@ GameObject:
   - component: {fileID: 6326160265901210526}
   - component: {fileID: 4001087043717455357}
   m_Layer: 0
-  m_Name: big box (14)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2386,7 +2467,7 @@ GameObject:
   - component: {fileID: 5628987405575151513}
   - component: {fileID: 1453959937963447106}
   m_Layer: 0
-  m_Name: big box (12)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2515,7 +2596,7 @@ GameObject:
   - component: {fileID: 779498627570306256}
   - component: {fileID: 3449133346189068904}
   m_Layer: 0
-  m_Name: big box (21)
+  m_Name: box
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
