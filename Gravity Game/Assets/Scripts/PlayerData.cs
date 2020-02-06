@@ -30,6 +30,8 @@ public class PlayerData //a static class that stores all data held between scene
         0f,
         0f,
         0f, //10
+        0f,
+        0f,
     };
     static public List<float> highScores = new List<float>
     {
@@ -43,6 +45,8 @@ public class PlayerData //a static class that stores all data held between scene
         1000000f,
         1000000f,
         1000000f, //10
+        1000000f,
+        1000000f,
     };
 
     static private readonly List<float> allTimeRecords = new List<float>
@@ -56,6 +60,8 @@ public class PlayerData //a static class that stores all data held between scene
         1000000f,
         4f,
         1000000f,
-        12.8f, //10
+        1000000f, //10
+        1000000f,
+        12.8f,
     };
 }
