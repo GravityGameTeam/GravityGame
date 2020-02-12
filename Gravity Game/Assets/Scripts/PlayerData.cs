@@ -19,8 +19,11 @@ public class PlayerData //a static class that stores all data held between scene
 
     static public int[] saveData = new int[2];
 
-    public static int TotalStars = Scoring.Sum();
-    
+
+        //;Scoring.starsPerLevel;
+
+
+
     static public List<float> scores = new List<float>
 
     {
