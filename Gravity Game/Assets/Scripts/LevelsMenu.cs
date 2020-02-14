@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,8 +10,11 @@ public class LevelsMenu : MonoBehaviour
 {
     public GameObject levelsButtonPrefab;
     public GameObject levelsButtonContainer;
-
-    private void Start()
+    public GameObject starsText;
+    public int starsTotal = 0;
+    
+    
+    public void Start()
     {
         Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
         //procedurally generates each level button in a row
@@ -28,13 +33,17 @@ public class LevelsMenu : MonoBehaviour
             //won't load levels that haven't been unlocked
             if (n >= PlayerData.farthestLevel)
             {
+                Debug.Log("First");
                 break;
             }
         }
+        starsTotal = Scoring.Sum();
+        string starsTotalString = starsTotal.ToString();
+        starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
     }
 
     //sets the target level using PlayerData, then switches scenes. Game scene loads level on Start.
-    private void LevelLoad(string sceneName)
+    private static void LevelLoad(string sceneName)
     {
         //assigns selectedLevel based on name of image file in button clicked
         int.TryParse(sceneName, out PlayerData.selectedLevel);
@@ -44,4 +53,9 @@ public class LevelsMenu : MonoBehaviour
         Debug.Log("Loaded scene");
         Debug.Log(sceneName);
     }
+
+
+    
+    
+    
 }

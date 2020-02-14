@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class PlayerData //a static class that stores all data held between scenes
 {
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
@@ -16,6 +16,13 @@ public class PlayerData //a static class that stores all data held between scene
     static public Vector2 spawnPoint = new Vector2(0f, 0f); //changed based on level
 
     static public float time = 0;
+
+    static public int[] saveData = new int[2];
+
+
+        //;Scoring.starsPerLevel;
+
+
 
     static public List<float> scores = new List<float>
 
