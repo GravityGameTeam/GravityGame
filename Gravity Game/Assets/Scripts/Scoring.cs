@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Scoring : MonoBehaviour
 {
-    
+
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;

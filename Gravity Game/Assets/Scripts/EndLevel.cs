@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
+    public Player playerScript;
     public GameObject menuPanel;
     public GameObject timerManager;
     public GameObject player;
@@ -56,12 +57,15 @@ public class EndLevel : MonoBehaviour
         
         menuPanel.SetActive(true);
         scoringManager.GetComponent<Scoring>().AssignStars();
+        playerScript.Save();
         
         //if a new level was beaten, unlock the next one
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
         {
             PlayerData.farthestLevel ++;
         }
+
+
     }
 
     public void Restart() //reloads Game

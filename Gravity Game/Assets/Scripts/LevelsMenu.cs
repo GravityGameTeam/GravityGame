@@ -33,7 +33,6 @@ public class LevelsMenu : MonoBehaviour
             //won't load levels that haven't been unlocked
             if (n >= PlayerData.farthestLevel)
             {
-                Debug.Log("First");
                 break;
             }
         }

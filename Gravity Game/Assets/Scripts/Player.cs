@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
         SaveStarslevels = Scoring.starsPerLevel;
         FarthestLevel2 = PlayerData.farthestLevel;
         
+
+        
         SaveData data = SaveSystem.LoadPlayer();
 
         PlayerData.farthestLevel = data.levelSave;
@@ -24,15 +26,12 @@ public class Player : MonoBehaviour
     
     public void Save ()
     {
+        
         SaveSystem.SavePlayer(this);
         
         Debug.Log("yefgjhfrvdkfshnjdnbj");
-
+        
     }
 
-    public void Load()
-    {
-
-    }
     
 }
