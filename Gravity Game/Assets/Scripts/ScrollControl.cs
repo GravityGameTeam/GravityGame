@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ScrollControl : MonoBehaviour
 {
+    public float startPosition;
     public float leftLimit;
     public float rightLimit;
     
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(rightLimit, transform.position.y, 0);
+        transform.position = new Vector3(startPosition, transform.position.y, 100);
     }
 
     // Update is called once per frame
@@ -20,10 +21,10 @@ public class ScrollControl : MonoBehaviour
 
         if (transform.position.x < leftLimit)
         {
-            transform.position = new Vector3(leftLimit, transform.position.y, 0);
+            transform.position = new Vector3(leftLimit, transform.position.y, 100);
         } else if (transform.position.x > rightLimit)
         {
-            transform.position = new Vector3(rightLimit, transform.position.y, 0);
+            transform.position = new Vector3(rightLimit, transform.position.y, 100);
         }
     }
 }

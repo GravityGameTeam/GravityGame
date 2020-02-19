@@ -1125,8 +1125,8 @@ Canvas:
   m_GameObject: {fileID: 387642497}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 295509917}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2190,7 +2190,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713139429}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4087,7 +4087,7 @@ RectTransform:
   m_Children:
   - {fileID: 1755464995}
   m_Father: {fileID: 1713139429}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4386,7 +4386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 3.86}
+  m_AnchoredPosition: {x: 592, y: 3.86}
   m_SizeDelta: {x: 75.3, y: 244.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098120557
@@ -4639,7 +4639,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713139429}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4753,8 +4753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756287925231a34489b73820be4cec28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftLimit: -315
-  rightLimit: 540
+  startPosition: -0.7
+  leftLimit: -25
+  rightLimit: 7.5
 --- !u!1 &1162655474
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,7 +5215,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713139429}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5536,7 +5537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -600, y: 3.86}
+  m_AnchoredPosition: {x: -592, y: 3.86}
   m_SizeDelta: {x: 75.3, y: 244.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461109274
@@ -5771,7 +5772,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713139429}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6424,11 +6425,11 @@ RectTransform:
   - {fileID: 2068431479}
   - {fileID: 809532454}
   - {fileID: 1701290070}
-  - {fileID: 438864437}
   - {fileID: 1328810246}
-  - {fileID: 1478098195}
   - {fileID: 1061917391}
   - {fileID: 1109271262}
+  - {fileID: 438864437}
+  - {fileID: 1478098195}
   m_Father: {fileID: 387642501}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6516,6 +6517,7 @@ GameObject:
   - component: {fileID: 1752460462}
   - component: {fileID: 1752460464}
   - component: {fileID: 1752460465}
+  - component: {fileID: 1752460466}
   m_Layer: 5
   m_Name: SkinsButtonContainer
   m_TagString: Untagged
@@ -6637,6 +6639,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1752460466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752460460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756287925231a34489b73820be4cec28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: 8.5
+  leftLimit: -64
+  rightLimit: 14
 --- !u!1 &1755464994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7391,7 +7408,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971641758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -53.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 56435422}
