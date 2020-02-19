@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class SaveData 
 {
-    public int[] saveStarslevels3;
+    public int[] saveStarsLevels3;
     public int levelSave;
     public SaveData(Player player)
     {
-        saveStarslevels3 = Player.SaveStarslevels;
+        saveStarsLevels3 = Player.SaveStarslevels;
         levelSave = Player.FarthestLevel2;
         
     }

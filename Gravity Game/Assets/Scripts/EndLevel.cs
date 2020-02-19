@@ -57,7 +57,7 @@ public class EndLevel : MonoBehaviour
         
         menuPanel.SetActive(true);
         scoringManager.GetComponent<Scoring>().AssignStars();
-        playerScript.Save();
+        //playerScript.Save();
         
         //if a new level was beaten, unlock the next one
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
@@ -75,6 +75,7 @@ public class EndLevel : MonoBehaviour
 
     public void Quit() //loads Menu
     {
+        PlayerData.hasUserOpenedGameScene = true;
         PlayerData.loadStartScreen = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");

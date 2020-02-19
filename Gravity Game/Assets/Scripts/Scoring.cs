@@ -11,6 +11,8 @@ public class Scoring : MonoBehaviour
     public GameObject star3;
     public static int[] starsPerLevel = new int[20];
     private static int amountOfLevels = 20;
+
+
     public void AssignStars()
     {
         float[][] times;
@@ -54,7 +56,6 @@ public class Scoring : MonoBehaviour
             }
         }
         
-        Debug.Log("idajs" + starsPerLevel[1]);
 
 
     }
