@@ -18,7 +18,7 @@ public class PlayerData //a static class that stores all data held between scene
 
     static public float time = 0;
 
-    static public int[] saveData = new int[2];
+    //static public int[] saveData = new int[2];
 
 
         //;Scoring.starsPerLevel;
@@ -73,7 +73,7 @@ public class PlayerData //a static class that stores all data held between scene
         4f,
         1000000f,
         1000000f, //10
-        1000000f,
+        2.3f,
         12.8f,
         1000000f,
         1000000f,
