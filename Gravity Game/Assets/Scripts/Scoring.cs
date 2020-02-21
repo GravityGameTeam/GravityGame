@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Scoring : MonoBehaviour
 {
-    
+
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;
-    static int[] starsPerLevel = new int[20];
-    public static int amountOfLevels = 20;
+    public static int[] starsPerLevel = new int[20];
+    private static int amountOfLevels = 20;
+
+
     public void AssignStars()
     {
         float[][] times;
@@ -22,7 +24,7 @@ public class Scoring : MonoBehaviour
         times[5] = new [] {2f,7.5f,12f};
         times[6] = new [] {4f,8f,16f};
         times[7] = new [] {2f,7.5f,12f};
-        times[8] = new [] {4f,8f,16f};
+        times[8] = new [] {20f,35f,60f};
         times[9] = new[] {4f, 7f, 15f};
         times[10] = new[] {4f, 7f, 15f};
         times[11] = new[] {4f, 7f, 15f};
@@ -61,16 +63,20 @@ public class Scoring : MonoBehaviour
     }
     
     public static int Sum() 
-    { 
-          
-        int sum = 0; // initialize sum 
-          
+    {
+
         // Iterate through all elements and  
         // add them to sum 
-        for (int i = 0; i < amountOfLevels; i++) 
-            sum += starsPerLevel[i]; 
-          
-        return sum; 
+        int sum = 0;
+        for (int i = 0; i < amountOfLevels; i++)
+        {
+            sum += starsPerLevel[i];
+        }
+
+        return sum;
+
+        
+
     }
 
 

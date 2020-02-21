@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
+    public Player playerScript;
     public GameObject menuPanel;
     public GameObject timerManager;
     public GameObject player;
@@ -64,12 +65,15 @@ public class EndLevel : MonoBehaviour
         menuPanel.SetActive(true);
         compAnim.SetBool("playIt", true); //plays menu panel animation
         scoringManager.GetComponent<Scoring>().AssignStars();
+        //playerScript.Save();
         
         //if a new level was beaten, unlock the next one
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
         {
             PlayerData.farthestLevel ++;
         }
+
+
     }
 
     public void Restart() //reloads Game
@@ -79,6 +83,7 @@ public class EndLevel : MonoBehaviour
 
     public void Quit() //loads Menu
     {
+        PlayerData.hasUserOpenedGameScene = true;
         PlayerData.loadStartScreen = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");

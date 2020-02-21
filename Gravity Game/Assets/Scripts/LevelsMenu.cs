@@ -14,7 +14,7 @@ public class LevelsMenu : MonoBehaviour
     public int starsTotal = 0;
     
     
-    private void Start()
+    public void Start()
     {
         Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
         //procedurally generates each level button in a row
@@ -36,14 +36,13 @@ public class LevelsMenu : MonoBehaviour
                 break;
             }
         }
-        starsTotal = PlayerData.TotalStars;
+        starsTotal = Scoring.Sum();
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
-        
     }
 
     //sets the target level using PlayerData, then switches scenes. Game scene loads level on Start.
-    private void LevelLoad(string sceneName)
+    private static void LevelLoad(string sceneName)
     {
         //assigns selectedLevel based on name of image file in button clicked
         int.TryParse(sceneName, out PlayerData.selectedLevel);
