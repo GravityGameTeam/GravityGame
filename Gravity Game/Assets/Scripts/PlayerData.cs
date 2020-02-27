@@ -75,7 +75,7 @@ public class PlayerData //a static class that stores all data held between scene
         4f,
         1000000f,
         1000000f, //10
-        1000000f,
+        2.28f,
         12.8f,
         1000000f,
         1000000f,
