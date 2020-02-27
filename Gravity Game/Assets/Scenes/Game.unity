@@ -1484,6 +1484,7 @@ MonoBehaviour:
   star1: {fileID: 370860823}
   star2: {fileID: 1583185380}
   star3: {fileID: 1793940050}
+  compAnim: {fileID: 1191205620}
 --- !u!4 &777879348
 Transform:
   m_ObjectHideFlags: 0

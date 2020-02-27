@@ -11,6 +11,8 @@ public class Scoring : MonoBehaviour
     public GameObject star3;
     public static int[] starsPerLevel = new int[20];
     private static int amountOfLevels = 20;
+    
+    public Animator compAnim;
 
 
     public void AssignStars()
@@ -36,23 +38,23 @@ public class Scoring : MonoBehaviour
 
         if (PlayerData.time < times[PlayerData.selectedLevel][2])
         {
-            star1.SetActive(true);
+            compAnim.SetTrigger("star11");
             if (starsPerLevel[PlayerData.selectedLevel] < 1)
             {
                 starsPerLevel[PlayerData.selectedLevel] = 1;
             }
         }
         if (PlayerData.time < times[PlayerData.selectedLevel][1])
+            compAnim.SetTrigger("star22");
         {
-            star2.SetActive(true);
             if (starsPerLevel[PlayerData.selectedLevel] < 2)
             {
                 starsPerLevel[PlayerData.selectedLevel] = 2;
             }
         }
         if (PlayerData.time < times[PlayerData.selectedLevel][0])
+            compAnim.SetTrigger("star33");
         {
-            star3.SetActive(true);
             if (starsPerLevel[PlayerData.selectedLevel] < 3)
             {
                 starsPerLevel[PlayerData.selectedLevel] = 3;
