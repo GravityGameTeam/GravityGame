@@ -7,7 +7,7 @@ public class Scoring : MonoBehaviour
 {
     
     public static int[] starsPerLevel = new int[20];
-    private static int amountOfLevels = 20;
+    public static int amountOfLevels = 20;
     
     public Animator compAnim;
 

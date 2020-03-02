@@ -26,6 +26,18 @@ public class Player : MonoBehaviour
         
     }
 
+    public void Reset()
+    {
+        PlayerData.farthestLevel = 1;
+        for(int i=0; i<Scoring.amountOfLevels; i++){
+            Scoring.starsPerLevel[i] = 0;
+        }
+        
+        SaveSystem.SavePlayer(this);
+        Load();
+
+    }
+
     public void Load()
     {
         SaveData data = SaveSystem.LoadPlayer();
