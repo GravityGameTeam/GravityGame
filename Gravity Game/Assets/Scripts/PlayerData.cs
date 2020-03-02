@@ -8,7 +8,7 @@ public class PlayerData //a static class that stores all data held between scene
     static public bool hasUserOpenedGameScene = false;
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
     static public int farthestLevel = 1; //controls locked levels
-    static public readonly int numberOfLevels = 14;
+    static public readonly int numberOfLevels = 15;
 
     static public bool loadStartScreen = true;
     
