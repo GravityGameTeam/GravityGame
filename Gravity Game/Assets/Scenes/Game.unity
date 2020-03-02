@@ -1481,9 +1481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a66699bd42dd8344aef9d6844c40257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star1: {fileID: 370860823}
-  star2: {fileID: 1583185380}
-  star3: {fileID: 1793940050}
   compAnim: {fileID: 1191205620}
 --- !u!4 &777879348
 Transform:
@@ -2034,12 +2031,11 @@ MonoBehaviour:
   - {fileID: 6070246498106119384, guid: 8ee665a7567a3924c9f7cfdbe4081525, type: 3}
   - {fileID: 5372662741303733114, guid: 4e390f3868dc1be41b0857425db7e825, type: 3}
   - {fileID: 6182508301102974581, guid: 83dd6013788970f4aa4700aaea73d844, type: 3}
-  - {fileID: 2675599753687870150, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
+  - {fileID: 2675599753687870150, guid: dc99873dea332a44aac077dcb428848e, type: 3}
   - {fileID: 5222916404476287841, guid: 5328f3b12f2318f4983b44a4404232f0, type: 3}
   - {fileID: 8697108970960551116, guid: ce259addc986b6247a007b7245166faf, type: 3}
   - {fileID: 4723033879845114861, guid: 87a02e7bc69c8dc43b9faba93a65c015, type: 3}
-  - {fileID: 4537399690261512895, guid: d67444d77ded8bc45bc1e05b70bad6c7, type: 3}
-  - {fileID: 2675599753687870150, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
+  - {fileID: 4537399690261512895, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
   - {fileID: 2735748200268261167, guid: f5a765d79b93f6a48b55efe206c0880d, type: 3}
 --- !u!4 &933384338
 Transform:
