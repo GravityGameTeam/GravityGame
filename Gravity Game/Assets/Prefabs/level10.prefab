@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3115926552670913206}
   - component: {fileID: 6307495273952953556}
   - component: {fileID: 4496700566286542303}
+  - component: {fileID: 7973791754505905436}
   m_Layer: 0
   m_Name: EndObject
   m_TagString: EndPortal
@@ -97,6 +98,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.6799998
+--- !u!95 &7973791754505905436
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135134630990190868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aced3029f7c0a8149833ab43ecec3526, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2675599753687870150
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4381335880106737650}
   m_Layer: 0
-  m_Name: level14
+  m_Name: level10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
