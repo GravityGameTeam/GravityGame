@@ -36,8 +36,6 @@ public class LevelsMenu : MonoBehaviour
                     string sceneName = thumbnail.name;
                     container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
                     n++;
-                    Debug.Log("FARTHEST LEVEL" + PlayerData.farthestLevel);
-                    Debug.Log( "This is nnnnnnnn" + n);
 
                     //won't load levels that haven't been unlocked
                     if (n >= PlayerData.farthestLevel)

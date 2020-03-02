@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
             SaveStarslevels = Scoring.starsPerLevel;
             FarthestLevel2 = PlayerData.farthestLevel;
             
-            Debug.Log("This is a test save has saved farthest level" + FarthestLevel2);
+            Debug.Log("This is a test save has saved farthest level " + FarthestLevel2);
         }
         
     }
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         PlayerData.farthestLevel = data.levelSave;
         Scoring.starsPerLevel = data.saveStarsLevels3;
         
-        Debug.Log("This is a test load has saved farthest level" + PlayerData.farthestLevel);
+        Debug.Log("This is a test load has saved farthest level " + PlayerData.farthestLevel);
         PlayerData.loadStartScreen = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

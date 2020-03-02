@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class Scoring : MonoBehaviour
 {
-
-    public GameObject star1;
-    public GameObject star2;
-    public GameObject star3;
+    
     public static int[] starsPerLevel = new int[20];
     private static int amountOfLevels = 20;
     
@@ -75,7 +72,6 @@ public class Scoring : MonoBehaviour
         {
             sum += starsPerLevel[i];
         }
-        Debug.Log("SUM IN METHOD IS " + sum);
 
         return sum;
 
