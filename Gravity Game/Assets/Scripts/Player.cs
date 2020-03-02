@@ -9,12 +9,7 @@ public class Player : MonoBehaviour
     public static int[] SaveStarslevels = Scoring.starsPerLevel;
     public static int FarthestLevel2 = PlayerData.farthestLevel;
 
-    public void Awake()
-    {
-        
 
-
-    }
     
     public void Save ()
     {

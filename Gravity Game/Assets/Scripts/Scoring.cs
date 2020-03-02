@@ -72,6 +72,7 @@ public class Scoring : MonoBehaviour
         {
             sum += starsPerLevel[i];
         }
+        Debug.Log("SUM IN METHOD IS " + sum);
 
         return sum;
 

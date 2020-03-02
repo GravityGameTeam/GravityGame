@@ -19,26 +19,47 @@ public class LevelsMenu : MonoBehaviour
         Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
         //procedurally generates each level button in a row
         int n = 0;
+        bool done = false;
         Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
-        foreach (Sprite thumbnail in thumbnails)
+        while (done == false)
         {
-            GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
-            container.GetComponent<Image>().sprite = thumbnail;
-            container.transform.SetParent(levelsButtonContainer.transform, false);
 
-            string sceneName = thumbnail.name;
-            container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
-            n++;
-
-            //won't load levels that haven't been unlocked
-            if (n >= PlayerData.farthestLevel)
+            foreach (Sprite thumbnail in thumbnails)
             {
-                break;
+                int.TryParse(thumbnail.name, out int i);
+                if (i == (n + 1))
+                {
+                    GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
+                    container.GetComponent<Image>().sprite = thumbnail;
+                    container.transform.SetParent(levelsButtonContainer.transform, false);
+
+                    string sceneName = thumbnail.name;
+                    container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
+                    n++;
+                    Debug.Log("FARTHEST LEVEL" + PlayerData.farthestLevel);
+                    Debug.Log( "This is nnnnnnnn" + n);
+
+                    //won't load levels that haven't been unlocked
+                    if (n >= PlayerData.farthestLevel)
+                    {
+                        done = true;
+                        break;
+                        
+                    }
+                }
+
+                if (n >= (PlayerData.numberOfLevels-1))
+                {
+                    done = true;
+                }
             }
         }
+        Debug.Log("sum is" + Scoring.Sum());
         starsTotal = Scoring.Sum();
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
+
+
     }
 
     //sets the target level using PlayerData, then switches scenes. Game scene loads level on Start.
