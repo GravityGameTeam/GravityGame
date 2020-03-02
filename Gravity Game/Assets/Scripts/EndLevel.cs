@@ -65,8 +65,8 @@ public class EndLevel : MonoBehaviour
         menuPanel.SetActive(true);
         compAnim.SetBool("playIt", true); //plays menu panel animation
         scoringManager.GetComponent<Scoring>().AssignStars();
-        //playerScript.Save();
         
+
         //if a new level was beaten, unlock the next one
         if (PlayerData.selectedLevel + 1 > PlayerData.farthestLevel)
         {
@@ -89,4 +89,5 @@ public class EndLevel : MonoBehaviour
         SceneManager.LoadScene("Menu");
         
     }
+
 }
