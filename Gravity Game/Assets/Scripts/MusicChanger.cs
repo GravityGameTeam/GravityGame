@@ -16,6 +16,15 @@ public class MusicChanger : MonoBehaviour
         SetTrack(track);
         SetVol(0.5f);
     }
+
+    void Update()
+    {
+        if (PlayerData.musicTrack != track) //If currently loaded track is different than what is set in PlayerData
+        {
+            track = PlayerData.musicTrack; //update track
+            SetTrack(track);
+        } //otherwise, keep playing as normal
+    }
     
     public void SetVol(float vol)
     {

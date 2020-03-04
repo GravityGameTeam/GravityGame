@@ -18,6 +18,8 @@ public class PlayerData //a static class that stores all data held between scene
 
     static public float time = 0;
 
+    static public int musicTrack = 0;
+
     //static public int[] saveData = new int[2];
 
 

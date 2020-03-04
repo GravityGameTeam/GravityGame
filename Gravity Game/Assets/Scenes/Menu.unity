@@ -1199,7 +1199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &409305300
 AudioSource:
@@ -3054,7 +3054,6 @@ MonoBehaviour:
   MusicButtonPrefab: {fileID: 9148526575313805300, guid: a6664a1f1a2e10a4a8c2b493bd0739ee,
     type: 3}
   MusicButtonContainer: {fileID: 1109271261}
-  MusicPlayer: {fileID: 409305298}
 --- !u!1 &763475636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,7 +4160,7 @@ Transform:
   - {fileID: 725967150}
   - {fileID: 763475637}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037750977
 GameObject:
@@ -4687,7 +4686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 592, y: 3.86}
+  m_AnchoredPosition: {x: 600, y: 3.86}
   m_SizeDelta: {x: 75.3, y: 244.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098120557
@@ -5838,7 +5837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -592, y: 3.86}
+  m_AnchoredPosition: {x: -600, y: 3.86}
   m_SizeDelta: {x: 75.3, y: 244.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461109274

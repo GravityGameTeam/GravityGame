@@ -8,7 +8,7 @@ public class MusicMenu : MonoBehaviour
 {
     public GameObject MusicButtonPrefab;
     public GameObject MusicButtonContainer;
-    public GameObject MusicPlayer;
+    //public GameObject MusicPlayer;
 
     private void Start()
     {
@@ -18,10 +18,11 @@ public class MusicMenu : MonoBehaviour
         {
             GameObject container = Instantiate(MusicButtonPrefab) as GameObject;
             container.GetComponent<Image>().sprite = thumbnail;
-            container.transform.SetParent(MusicButtonContainer.transform, false);
 
             string track = thumbnail.name;
             container.GetComponent<Button>().onClick.AddListener(() => MusicLoad(track));
+            
+            container.transform.SetParent(MusicButtonContainer.transform, false);
         }
     }
 
@@ -31,7 +32,8 @@ public class MusicMenu : MonoBehaviour
         //assigns selectedLevel based on name of image file in button clicked
         int trackToLoad;
         int.TryParse(track, out trackToLoad);
-        MusicPlayer.GetComponent<MusicChanger>().SetTrack(trackToLoad);
+        //MusicPlayer.GetComponent<MusicChanger>().SetTrack(trackToLoad);
+        PlayerData.musicTrack = trackToLoad;
 
         //changes music
         //SceneManager.LoadScene("Game");
