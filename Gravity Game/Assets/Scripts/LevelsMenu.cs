@@ -13,8 +13,8 @@ public class LevelsMenu : MonoBehaviour
     public GameObject starsText;
     public int starsTotal = 0;
 
-    public int startIndex;
-    public int endIndex = 3;
+    public int startIndex = 2;
+    public int endIndex = 4;
     
     public void Start()
     {
@@ -36,6 +36,12 @@ public class LevelsMenu : MonoBehaviour
 
                     string sceneName = thumbnail.name;
                     container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
+                    
+                    if (n + 1 < startIndex)
+                    {
+                        container.SetActive(false);
+                    }
+                    
                     n++;
 
                     //won't load levels that haven't been unlocked or exceed endIndex
@@ -53,6 +59,7 @@ public class LevelsMenu : MonoBehaviour
                 }
             }
         }
+        
         Debug.Log("sum is" + Scoring.Sum());
         starsTotal = Scoring.Sum();
         string starsTotalString = starsTotal.ToString();
