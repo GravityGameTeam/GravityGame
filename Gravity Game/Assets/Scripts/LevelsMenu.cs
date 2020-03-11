@@ -12,7 +12,9 @@ public class LevelsMenu : MonoBehaviour
     public GameObject levelsButtonContainer;
     public GameObject starsText;
     public int starsTotal = 0;
-    
+
+    public int startIndex;
+    public int endIndex = 3;
     
     public void Start()
     {
@@ -23,7 +25,6 @@ public class LevelsMenu : MonoBehaviour
         Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
         while (done == false)
         {
-
             foreach (Sprite thumbnail in thumbnails)
             {
                 int.TryParse(thumbnail.name, out int i);
@@ -37,8 +38,8 @@ public class LevelsMenu : MonoBehaviour
                     container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
                     n++;
 
-                    //won't load levels that haven't been unlocked
-                    if (n >= PlayerData.farthestLevel)
+                    //won't load levels that haven't been unlocked or exceed endIndex
+                    if (n >= PlayerData.farthestLevel || n >= endIndex)
                     {
                         done = true;
                         break;
@@ -46,7 +47,7 @@ public class LevelsMenu : MonoBehaviour
                     }
                 }
 
-                if (n >= (PlayerData.numberOfLevels-1))
+                if (n >= (PlayerData.numberOfLevels-1) || n >= endIndex - 1)
                 {
                     done = true;
                 }
@@ -56,8 +57,6 @@ public class LevelsMenu : MonoBehaviour
         starsTotal = Scoring.Sum();
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
-
-
     }
 
     //sets the target level using PlayerData, then switches scenes. Game scene loads level on Start.
