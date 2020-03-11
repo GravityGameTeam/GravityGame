@@ -3274,7 +3274,7 @@ MonoBehaviour:
   gravityForce: 40
   movementForce: 100
   maxMovementSpeed: 7
-  groundFrictionLevel: 0.5
+  groundFrictionLevel: 0.25
   jumpForce: 17
 --- !u!1 &1296731787
 GameObject:
