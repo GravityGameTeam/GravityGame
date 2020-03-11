@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class PlayerData : MonoBehaviour //a static class that stores all data held between scenes
+public class PlayerData /* : MonoBehaviour */ //a static class that stores all data held between scenes
 {
     static public bool hasUserOpenedGameScene = false;
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
