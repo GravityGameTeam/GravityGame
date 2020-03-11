@@ -2763,6 +2763,7 @@ MonoBehaviour:
   MusicButtonPrefab: {fileID: 9148526575313805300, guid: a6664a1f1a2e10a4a8c2b493bd0739ee,
     type: 3}
   MusicButtonContainer: {fileID: 1109271261}
+  VolumeSlider: {fileID: 809532455}
 --- !u!1 &763475636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,9 +3115,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 409305301}
-        m_MethodName: SetVol
-        m_Mode: 0
+      - m_Target: {fileID: 725967151}
+        m_MethodName: OnValueChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
