@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
 {
     public static int[] SaveStarslevels = Scoring.starsPerLevel;
     public static int FarthestLevel2 = PlayerData.farthestLevel;
-
-
     
     public void Save ()
     {
@@ -49,6 +47,4 @@ public class Player : MonoBehaviour
         PlayerData.loadStartScreen = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    
 }

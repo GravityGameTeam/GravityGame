@@ -10,6 +10,8 @@ TagManager:
   - music
   - spawn
   - Antigrav
+  - teleport
+  - player
   layers:
   - Default
   - TransparentFX

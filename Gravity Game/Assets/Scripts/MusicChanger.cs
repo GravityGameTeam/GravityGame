@@ -7,6 +7,7 @@ public class MusicChanger : MonoBehaviour
 {
     private AudioSource[] audioSources;
     private int track = 0;
+    private float volume = 0.5f;
 
     // Start is called before the first frame update
     
@@ -14,7 +15,7 @@ public class MusicChanger : MonoBehaviour
     {
         audioSources = GetComponents<AudioSource>(); //accesses all AudioSources
         SetTrack(track);
-        SetVol(0.5f);
+        SetVol(volume);
     }
 
     void Update()
@@ -24,6 +25,12 @@ public class MusicChanger : MonoBehaviour
             track = PlayerData.musicTrack; //update track
             SetTrack(track);
         } //otherwise, keep playing as normal
+
+        if (PlayerData.volume != volume)
+        {
+            volume = PlayerData.volume;
+            SetVol(PlayerData.volume);
+        }
     }
     
     public void SetVol(float vol)

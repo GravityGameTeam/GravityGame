@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class PlayerData //a static class that stores all data held between scenes
+public class PlayerData /* : MonoBehaviour */ //a static class that stores all data held between scenes
 {
     static public bool hasUserOpenedGameScene = false;
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
@@ -19,6 +19,7 @@ public class PlayerData //a static class that stores all data held between scene
     static public float time = 0;
 
     static public int musicTrack = 0;
+    static public float volume = 0.5f;
 
     //static public int[] saveData = new int[2];
 
@@ -45,6 +46,10 @@ public class PlayerData //a static class that stores all data held between scene
         0f,
         0f,
         0f, //15
+        0f,
+        0f,
+        0f,
+
     };
     static public List<float> highScores = new List<float>
     {
@@ -63,6 +68,9 @@ public class PlayerData //a static class that stores all data held between scene
         1000000f,
         1000000f,
         1000000f, //15
+        1000000f,
+        1000000f,
+        1000000f,
     };
 
     static private readonly List<float> allTimeRecords = new List<float>
@@ -82,5 +90,8 @@ public class PlayerData //a static class that stores all data held between scene
         1000000f,
         1000000f,
         1000000f, //15
+        1000000f,
+        1000000f,
+        1000000f,
     };
 }
