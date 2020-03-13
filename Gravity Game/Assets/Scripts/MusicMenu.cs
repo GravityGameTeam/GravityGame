@@ -8,7 +8,7 @@ public class MusicMenu : MonoBehaviour
 {
     public GameObject MusicButtonPrefab;
     public GameObject MusicButtonContainer;
-    //public GameObject MusicPlayer;
+    public Slider VolumeSlider;
 
     private void Start()
     {
@@ -39,5 +39,10 @@ public class MusicMenu : MonoBehaviour
         //SceneManager.LoadScene("Game");
         Debug.Log("Loaded music");
         Debug.Log(track);
+    }
+    
+    public void OnValueChanged() //This method is here because the volume slider needs to activate a method in a script attached to a GameObject that isn't shunted into a DDOL. 
+    {
+        PlayerData.volume = VolumeSlider.value;
     }
 }
