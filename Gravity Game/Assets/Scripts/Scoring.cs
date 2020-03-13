@@ -31,6 +31,9 @@ public class Scoring : MonoBehaviour
         times[13] = new[] {15f, 45f, 90f};
         times[14] = new[] {15f, 45f, 90f};
         times[15] = new[] {15f, 45f, 90f};
+        times[16] = new[] {15f, 45f, 90f};
+        times[17] = new[] {15f, 45f, 90f};
+        times[18] = new[] {15f, 45f, 90f};
         //times[4] = new [] {};
 
         if (PlayerData.time < times[PlayerData.selectedLevel][2])
