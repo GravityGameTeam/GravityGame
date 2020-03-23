@@ -1,0 +1,54 @@
+Okay, first, you have to be using Windows. If you aren’t, this probably won’t work for you.
+
+Step 1: Get Git
+Download Git from here: https://git-scm.com/downloads 
+Install it, and just follow the prompts in the installation wizard. Don’t change anything if you don’t know what you’re doing.
+Nothing else will work if you don’t have Git.
+
+Step 2: Get Large File Storage
+Download LFS from here: https://git-lfs.github.com
+Install it via the .exe download.
+Then go to any folder on your device using File Explorer. Right-click, and you should see in the drop-down menu Git Bash Here. Click that.
+If you don’t see that option, make sure you’re actually in a folder. Git won’t work if you’re in Quick Access, for example.
+Clicking that option opens up Git’s command prompt. To initialize LFS, type and enter the following:
+git lfs install
+That will install LFS. You only need to do that once.
+
+Step 3: Get GitKraken
+Download and install GitKraken from here: https://www.gitkraken.com/git-client 
+Once GitKraken opens, you’ll have to sign in using GitHub. The GitHub Student Developer Pack gives you the license you need to use this; you definitely have it by now. 
+Pin GitKraken to the taskbar.
+Now you need to clone your game repository. Go to Clone a repo, then to GitHub.com.
+Choose a destination folder (and remember it for later), then find your repo in the drop-down. Clone it.
+You need to make sure LFS is working on your repository before you do anything else. Once you’re in your repository, in the top bar, there should be a LFS button (since you’ve already initialized LFS on that repo at school). Click on it, then choose Pull all LFS files in the drop-down.
+If that button isn’t there, make sure you downloaded Git and LFS before you downloaded GitKraken. Or try restarting GitKraken. Also check your Preferences for that repository and see if there’s a LFS tab there; you might need to re-initialize it.
+
+Step 3.5: Add your .gitattributes to Git, just in case of LFS failure
+There’s one more thing you might need to do. Go to the folder you cloned your repository to.
+Find your .gitattributes file. In File Explorer, it might just show up as a blank file name (as will the .gitignore).
+Right click and pick Git Bash Here. In the command prompt, type:
+git add .gitattributes
+Okay, now you’re good. Go back to GitKraken and pull.
+
+Step 4: Get Unity
+Download Unity from here. https://store.unity.com/#plans-individual 
+You’re probably using the Personal license. You could probably upgrade to the Student license as well, since you have the GitHub student pack (that’s the thing you had to join in order to keep using GitKraken).
+You’ll probably need to sign in with your Unity ID somewhere along the way, I forget where. Might as well do it now.
+Install Unity Hub, and pin it to the taskbar. 
+You’ll need to download the version of Unity you need from the Installs tab. (Right now, it’s 2019.3.6f1. If you were using an older version, you’ll need to upgrade now.)
+From the Installs tab, click Add, select the version you need, and click Next.
+It will open up a list of plugins and extensions you’ll want. Uncheck Microsoft Visual Studio, you don’t want that. You’ll be using Rider instead.
+Once you’ve got that installed, you’ll want to open the project. Go to the Projects tab, then click Add. Find the folder that contains your cloned repo, then open it. Choose the Unity Project folder, which will be inside the main folder (on the same level as the .gitignore, .gitattributes, and README.md). 
+That should load the project and allow you to open it.
+If window resolution is an issue, as it is for my group, once you’re in Unity, go to Window > Layouts > Default, which should restore the view you’re used to.
+
+Step 5: Get Rider
+You don’t need to sign in to download Rider, but you have to sign in after it’s downloaded to use it, since it needs a license.
+Get Rider from here: https://www.jetbrains.com/rider/download/#section=windows 
+Once you run it, jump through the hoops in the installer, and sign in with your JetBrains account. You might want to check to see when your student license expires.
+Then you need to configure Unity to work with Rider. 
+Go back to Unity, and go to Edit > Preferences, find the External Tools tab, and from the External Script Editor drop-down, choose Rider.
+Alternatively, since you don’t have Visual Studio installed, you can keep it selected as Open by file extension. Then, the first time you open a script, Windows will ask what app to use to open .cs files, and you can choose Rider from the list, and check the Always use this app to open .cs files box.
+
+Step 6: Get moving
+You’re good to go. Make sure everything works and you’re updated to the right version of Unity.
