@@ -65,18 +65,15 @@ public class Scoring : MonoBehaviour
                 starsPerLevel[PlayerData.selectedLevel] = 3;
             }
         }
-        
-
-
     }
     
-    public static int Sum() 
+    public static int Sum(int startIndex, int endIndex) 
     {
 
         // Iterate through all elements and  
         // add them to sum 
         int sum = 0;
-        for (int i = 0; i < amountOfLevels; i++)
+        for (int i = startIndex; i < endIndex; i++)
         {
             sum += starsPerLevel[i];
         }

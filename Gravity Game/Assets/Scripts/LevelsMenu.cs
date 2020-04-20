@@ -82,8 +82,8 @@ public class LevelsMenu : MonoBehaviour
             }
         }
         
-        Debug.Log("sum is" + Scoring.Sum());
-        starsTotal = Scoring.Sum();
+        Debug.Log("sum is " + Scoring.Sum(startIndex - 1, endIndex - 1) + " from " + startIndex + " to " + endIndex);
+        starsTotal = Scoring.Sum(startIndex - 1, endIndex - 1);
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
     }
