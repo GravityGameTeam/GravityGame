@@ -5,33 +5,42 @@ using UnityEngine.UI;
 
 public class DoubleScroll : MonoBehaviour
 {
-    public GameObject levels;
-    public GameObject stars;
+    public GameObject levelsButtonContainer;
     public Vector3 rectPosition;
     public GameObject starsImagePrefab;
     public GameObject starsImageContainer;
 
+    private int startIndex;
+    private int endIndex;
+
     public void Update()
     {
         //Change the current horizontal scroll position.
-        rectPosition = levels.transform.position;
+        rectPosition = levelsButtonContainer.transform.position;
         rectPosition.z = 100;
         rectPosition.y -= 3;
-        stars.transform.position = rectPosition;
+        starsImageContainer.transform.position = rectPosition;
     }
 
-    public void Start()
+    public void LoadStars()
     {
-        Sprite[] thumbnails = Resources.LoadAll<Sprite>("StarPictures");
-        for (int i = 1; i <= PlayerData.farthestLevel; i++)
+        Debug.Log("Deleting children of StarContainer");
+        foreach (Transform child in starsImageContainer.transform)
         {
-            if (Scoring.starsPerLevel[i] == 1)
+            GameObject.Destroy(child.gameObject);
+        }
+        
+        Sprite[] thumbnails = Resources.LoadAll<Sprite>("StarPictures");
+        for (int i = PlayerData.startIndex; i <= PlayerData.endIndex; i++)
+        {
+            if (i > PlayerData.farthestLevel)
             {
-                GameObject container = Instantiate(starsImagePrefab) as GameObject;
-                //container.GetComponent<Image>().sprite = ;
-                container.transform.SetParent(starsImageContainer.transform, false);
-
+                break;
             }
+
+            GameObject container = Instantiate(starsImagePrefab) as GameObject;
+            container.GetComponent<Image>().sprite = thumbnails[Scoring.starsPerLevel[i]];
+            container.transform.SetParent(starsImageContainer.transform, false);
         }
     }
 }

@@ -8,8 +8,10 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
     static public bool hasUserOpenedGameScene = false;
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
     static public int farthestLevel = 1; //controls locked levels
-    static public readonly int numberOfLevels = 15;
-
+    static public readonly int numberOfLevels = 20;
+    static public int startIndex;
+    static public int endIndex;
+    
     static public bool loadStartScreen = true;
     
     static public string skinPick = ""; //assigned by skin picker

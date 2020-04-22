@@ -10,11 +10,10 @@ public class LevelsMenu : MonoBehaviour
 {
     public GameObject levelsButtonPrefab;
     public GameObject levelsButtonContainer;
+    public GameObject doubleScroll;
     public GameObject starsText;
+    
     public int starsTotal = 0;
-
-    private int startIndex;
-    private int endIndex;
 
     public void Start()
     {
@@ -50,8 +49,8 @@ public class LevelsMenu : MonoBehaviour
                 int.TryParse(thumbnail.name, out int i);
                 Debug.Log("Parsed level " + i);
                 
-                Debug.Log("Preparing for if. i is " + i + ", startIndex is " + startIndex);
-                if (i >= startIndex && i <= PlayerData.farthestLevel)
+                Debug.Log("Preparing for if. i is " + i + ", startIndex is " + PlayerData.startIndex);
+                if (i >= PlayerData.startIndex && i <= PlayerData.farthestLevel)
                 {
                     Debug.Log("Level is correct!");
                     
@@ -63,9 +62,9 @@ public class LevelsMenu : MonoBehaviour
                     container.GetComponent<Button>().onClick.AddListener(() => LevelLoad(sceneName));
                     
                     //won't load levels that haven't been unlocked or exceed endIndex
-                    if (i >= PlayerData.farthestLevel || i >= endIndex)
+                    if (i >= PlayerData.farthestLevel || i >= PlayerData.endIndex)
                     {
-                        Debug.Log("Loop broken at i = " + i + ". farthestLevel is " + PlayerData.farthestLevel + ", endIndex is " + endIndex);
+                        Debug.Log("Loop broken at i = " + i + ". farthestLevel is " + PlayerData.farthestLevel + ", endIndex is " + PlayerData.endIndex);
                         done = true;
                         break;
                     }
@@ -75,15 +74,15 @@ public class LevelsMenu : MonoBehaviour
                     Debug.Log("Level load of " + i + " failed");
                 }
 
-                if (i >= (PlayerData.numberOfLevels-1) || i >= endIndex )
+                if (i >= (PlayerData.numberOfLevels-1) || i >= PlayerData.endIndex )
                 {
                     done = true;
                 }
             }
         }
         
-        Debug.Log("sum is " + Scoring.Sum(startIndex - 1, endIndex - 1) + " from " + startIndex + " to " + endIndex);
-        starsTotal = Scoring.Sum(startIndex - 1, endIndex - 1);
+        Debug.Log("sum is " + Scoring.Sum(PlayerData.startIndex - 1, PlayerData.endIndex - 1) + " from " + PlayerData.startIndex + " to " + PlayerData.endIndex);
+        starsTotal = Scoring.Sum(PlayerData.startIndex - 1, PlayerData.endIndex - 1);
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
     }
@@ -102,8 +101,9 @@ public class LevelsMenu : MonoBehaviour
 
     public void setIndices(int newStartIndex, int newEndIndex)
     {
-        startIndex = newStartIndex;
-        endIndex = newEndIndex;
+        PlayerData.startIndex = newStartIndex;
+        PlayerData.endIndex = newEndIndex;
         LoadButtons();
+        doubleScroll.GetComponent<DoubleScroll>().LoadStars();
     }
 }
