@@ -22,13 +22,13 @@ public class LevelsMenu : MonoBehaviour
     
     public void LoadButtons()
     {
-        Debug.Log("Deleting children of ScrollRect");
+        //Debug.Log("Deleting children of ScrollRect");
         foreach (Transform child in levelsButtonContainer.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
         
-        Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
+        //Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
         //procedurally generates each level button in a row
         bool done = false;
         Sprite[] thumbnails = Resources.LoadAll<Sprite>("Levels");
@@ -37,22 +37,22 @@ public class LevelsMenu : MonoBehaviour
         {
             return Int32.Parse(thumbnail1.name).CompareTo(Int32.Parse(thumbnail2.name));
         });
-        Debug.Log("sorted thumbnails");
+        //Debug.Log("sorted thumbnails");
         
         while (done == false)
         {
-            Debug.Log("entered level loading loop");
+            //Debug.Log("entered level loading loop");
             
             foreach (Sprite thumbnail in thumbnails)
             {
-                Debug.Log("Entered foreach");
+                //Debug.Log("Entered foreach");
                 int.TryParse(thumbnail.name, out int i);
-                Debug.Log("Parsed level " + i);
+                //Debug.Log("Parsed level " + i);
                 
-                Debug.Log("Preparing for if. i is " + i + ", startIndex is " + PlayerData.startIndex);
+                //Debug.Log("Preparing for if. i is " + i + ", startIndex is " + PlayerData.startIndex);
                 if (i >= PlayerData.startIndex && i <= PlayerData.farthestLevel)
                 {
-                    Debug.Log("Level is correct!");
+                    //Debug.Log("Level is correct!");
                     
                     GameObject container = Instantiate(levelsButtonPrefab) as GameObject;
                     container.GetComponent<Image>().sprite = thumbnail;
@@ -64,7 +64,7 @@ public class LevelsMenu : MonoBehaviour
                     //won't load levels that haven't been unlocked or exceed endIndex
                     if (i >= PlayerData.farthestLevel || i >= PlayerData.endIndex)
                     {
-                        Debug.Log("Loop broken at i = " + i + ". farthestLevel is " + PlayerData.farthestLevel + ", endIndex is " + PlayerData.endIndex);
+                        //Debug.Log("Loop broken at i = " + i + ". farthestLevel is " + PlayerData.farthestLevel + ", endIndex is " + PlayerData.endIndex);
                         done = true;
                         break;
                     }
@@ -81,8 +81,8 @@ public class LevelsMenu : MonoBehaviour
             }
         }
         
-        Debug.Log("sum is " + Scoring.Sum(PlayerData.startIndex - 1, PlayerData.endIndex - 1) + " from " + PlayerData.startIndex + " to " + PlayerData.endIndex);
-        starsTotal = Scoring.Sum(PlayerData.startIndex - 1, PlayerData.endIndex - 1);
+        Debug.Log("sum is " + Scoring.Sum(PlayerData.startIndex, PlayerData.endIndex) + " from " + PlayerData.startIndex + " to " + PlayerData.endIndex);
+        starsTotal = Scoring.Sum(PlayerData.startIndex, PlayerData.endIndex);
         string starsTotalString = starsTotal.ToString();
         starsText.GetComponent<TextMeshProUGUI>().text = starsTotalString;
     }

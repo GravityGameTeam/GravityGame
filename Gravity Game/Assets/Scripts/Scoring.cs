@@ -73,16 +73,10 @@ public class Scoring : MonoBehaviour
         // Iterate through all elements and  
         // add them to sum 
         int sum = 0;
-        for (int i = startIndex; i < endIndex; i++)
+        for (int i = startIndex; i <= endIndex; i++)
         {
             sum += starsPerLevel[i];
         }
-
         return sum;
-
     }
-    
-
-
-
 }
