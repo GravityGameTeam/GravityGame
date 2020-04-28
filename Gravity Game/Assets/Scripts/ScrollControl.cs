@@ -11,7 +11,7 @@ public class ScrollControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(startPosition, transform.position.y, 100);
+        Reset();
     }
 
     // Update is called once per frame
@@ -26,5 +26,10 @@ public class ScrollControl : MonoBehaviour
         {
             transform.position = new Vector3(rightLimit, transform.position.y, 100);
         }
+    }
+
+    public void Reset()
+    {
+        transform.position = new Vector3(startPosition, transform.position.y, 100);
     }
 }

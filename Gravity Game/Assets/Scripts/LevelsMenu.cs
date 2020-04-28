@@ -27,6 +27,8 @@ public class LevelsMenu : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+
+        levelsButtonContainer.GetComponent<ScrollControl>().Reset();
         
         //Debug.Log("Farthest level unlocked: " + PlayerData.farthestLevel);
         //procedurally generates each level button in a row
