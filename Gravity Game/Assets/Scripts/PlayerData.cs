@@ -8,7 +8,7 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
     static public bool hasUserOpenedGameScene = false;
     static public int selectedLevel = 1; //stores level to be loaded on Game Start
     static public int farthestLevel = 1; //controls locked levels
-    static public readonly int numberOfLevels = 20;
+    static public readonly int numberOfLevels = 30;
     static public int startIndex;
     static public int endIndex;
     
@@ -31,7 +31,6 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
 
 
     static public List<float> scores = new List<float>
-
     {
         0f, //1
         0f, 
@@ -51,7 +50,18 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
         0f,
         0f,
         0f,
-
+        0f,
+        0f, //20
+        0f,
+        0f,
+        0f,
+        0f,
+        0f, //25
+        0f,
+        0f,
+        0f,
+        0f,
+        0f //30
     };
     static public List<float> highScores = new List<float>
     {
@@ -73,6 +83,18 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
         1000000f,
         1000000f,
         1000000f,
+        1000000f,
+        1000000f, //20
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f, //25
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f //30
     };
 
     static private readonly List<float> allTimeRecords = new List<float>
@@ -95,5 +117,17 @@ public class PlayerData /* : MonoBehaviour */ //a static class that stores all d
         1000000f,
         1000000f,
         1000000f,
+        1000000f,
+        1000000f, //20
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f, //25
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f,
+        1000000f //30
     };
 }

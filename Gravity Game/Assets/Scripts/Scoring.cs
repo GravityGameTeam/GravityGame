@@ -6,8 +6,7 @@ using UnityEngine;
 public class Scoring : MonoBehaviour
 {
     
-    public static int[] starsPerLevel = new int[20];
-    public static int amountOfLevels = 20;
+    public static int[] starsPerLevel = new int[PlayerData.numberOfLevels + 1];
     
     public Animator compAnim;
 
@@ -15,7 +14,7 @@ public class Scoring : MonoBehaviour
     public void AssignStars()
     {
         float[][] times;
-        times = new float[amountOfLevels][];
+        times = new float[PlayerData.numberOfLevels + 1][];
         times[1] = new [] {1.4f,5.5f,9f};
         times[2] = new [] {2.5f,7.5f,12f};
         times[3] = new [] {4f,8f,16f};
@@ -34,6 +33,19 @@ public class Scoring : MonoBehaviour
         times[16] = new[] {15f, 45f, 90f};
         times[17] = new[] {15f, 45f, 90f};
         times[18] = new[] {15f, 45f, 90f};
+        times[19] = new[] {0f, 0f, 0f};
+        times[20] = new[] {0f, 0f, 0f};
+        times[21] = new[] {0f, 0f, 0f};
+        times[22] = new[] {0f, 0f, 0f};
+        times[23] = new[] {0f, 0f, 0f};
+        times[24] = new[] {0f, 0f, 0f};
+        times[25] = new[] {0f, 0f, 0f};
+        times[26] = new[] {0f, 0f, 0f};
+        times[27] = new[] {0f, 0f, 0f};
+        times[28] = new[] {0f, 0f, 0f};
+        times[29] = new[] {0f, 0f, 0f};
+        times[30] = new[] {0f, 0f, 0f};
+
         //times[4] = new [] {};
 
         if (PlayerData.time < times[PlayerData.selectedLevel][2])

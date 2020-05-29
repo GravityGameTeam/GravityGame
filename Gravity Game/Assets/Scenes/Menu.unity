@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelManager: {fileID: 2116915061}
-  startIndex: 8
-  endIndex: 10
+  startIndex: 11
+  endIndex: 20
 --- !u!114 &40708907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4952,8 +4952,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelManager: {fileID: 2116915061}
-  startIndex: 11
-  endIndex: 15
+  startIndex: 21
+  endIndex: 30
 --- !u!114 &1166672399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7808,7 +7808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelManager: {fileID: 2116915061}
   startIndex: 1
-  endIndex: 7
+  endIndex: 10
 --- !u!1 &2021612861
 GameObject:
   m_ObjectHideFlags: 0

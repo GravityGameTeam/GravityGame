@@ -1459,7 +1459,7 @@ GameObject:
   - component: {fileID: 753251851}
   - component: {fileID: 753251850}
   m_Layer: 0
-  m_Name: lethalBlock
+  m_Name: lethal box
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1552,7 +1552,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20e3642b1832af6439362b32bb9bccec, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.94541883, a: 1}
+  m_Color: {r: 0.19607843, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2147,22 +2147,34 @@ MonoBehaviour:
   levelPrefabs:
   - {fileID: 3233801712243962371, guid: 674e9529f4fc25e4280205e2f3564903, type: 3}
   - {fileID: 8787774652701470087, guid: 8387988be58b0ff4fa0b3256a9e8c347, type: 3}
-  - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
-  - {fileID: 8097914300928801007, guid: ad7728561337fef4bbcbc434f59152e5, type: 3}
   - {fileID: 3740137107261281645, guid: 4d4bb2ca3e8cf404a8c25fde559c9b16, type: 3}
-  - {fileID: 4614893413778765035, guid: 665b0e42a1ce2354aa5529e8543b850a, type: 3}
+  - {fileID: 8097914300928801007, guid: ad7728561337fef4bbcbc434f59152e5, type: 3}
+  - {fileID: 3247313482368552836, guid: 329f1b1c52e87024a817bf11ea353492, type: 3}
   - {fileID: 6070246498106119384, guid: 8ee665a7567a3924c9f7cfdbe4081525, type: 3}
-  - {fileID: 5372662741303733114, guid: 4e390f3868dc1be41b0857425db7e825, type: 3}
-  - {fileID: 6182508301102974581, guid: 83dd6013788970f4aa4700aaea73d844, type: 3}
-  - {fileID: 2675599753687870150, guid: dc99873dea332a44aac077dcb428848e, type: 3}
-  - {fileID: 5222916404476287841, guid: 5328f3b12f2318f4983b44a4404232f0, type: 3}
-  - {fileID: 8697108970960551116, guid: ce259addc986b6247a007b7245166faf, type: 3}
-  - {fileID: 4723033879845114861, guid: 87a02e7bc69c8dc43b9faba93a65c015, type: 3}
-  - {fileID: 4537399690261512895, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
-  - {fileID: 2735748200268261167, guid: f5a765d79b93f6a48b55efe206c0880d, type: 3}
+  - {fileID: 4614893413778765035, guid: 665b0e42a1ce2354aa5529e8543b850a, type: 3}
+  - {fileID: 379454828237157470, guid: fb56379c677ca8e468ba4eb83375354c, type: 3}
   - {fileID: 8265553090719689607, guid: 3e86e06c72fb37b4ca027470203b61c7, type: 3}
   - {fileID: 1743586171310481644, guid: de3584ed9545ecc4d9b849de02913229, type: 3}
-  - {fileID: 379454828237157470, guid: fb56379c677ca8e468ba4eb83375354c, type: 3}
+  - {fileID: 7211557453630046744, guid: c79de43d6eb19ad4eb46423241843d6d, type: 3}
+  - {fileID: 5372662741303733114, guid: 4e390f3868dc1be41b0857425db7e825, type: 3}
+  - {fileID: 9063323045787007248, guid: 24f568dc445b03c49bb7a2ef7b5ce3a3, type: 3}
+  - {fileID: 2232758417087404152, guid: 6b6060e56f1525d4a8bbe7c9f328261b, type: 3}
+  - {fileID: 6876042801388483980, guid: 71378195eaa97b3478c88ce5cc6ccc96, type: 3}
+  - {fileID: 6182508301102974581, guid: 83dd6013788970f4aa4700aaea73d844, type: 3}
+  - {fileID: 2675599753687870150, guid: dc99873dea332a44aac077dcb428848e, type: 3}
+  - {fileID: 9133264790636458478, guid: 800b0ec318af37142bf50efba491b66d, type: 3}
+  - {fileID: 4238705018667839310, guid: e195635b03c4b7046b65d0ba2e159ead, type: 3}
+  - {fileID: 4963938089802043322, guid: 736363621aa4ac54584ebbd3cef96285, type: 3}
+  - {fileID: 1402936214769096335, guid: 65fba5293d1f26d45beeee909322c809, type: 3}
+  - {fileID: 5222916404476287841, guid: 5328f3b12f2318f4983b44a4404232f0, type: 3}
+  - {fileID: 1760052893831242717, guid: 710554e577e2e654e86b68550c95d467, type: 3}
+  - {fileID: 4245519230028226782, guid: 7cb41abc0d03f92488a912604fc90104, type: 3}
+  - {fileID: 2735748200268261167, guid: f5a765d79b93f6a48b55efe206c0880d, type: 3}
+  - {fileID: 2806828318579284180, guid: fd494ef0965764440a9d894cbb311952, type: 3}
+  - {fileID: 4723033879845114861, guid: 87a02e7bc69c8dc43b9faba93a65c015, type: 3}
+  - {fileID: 8697108970960551116, guid: ce259addc986b6247a007b7245166faf, type: 3}
+  - {fileID: 4537399690261512895, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
+  - {fileID: 94076441778168296, guid: cb08c2304f2df9e47b31e545f15d8842, type: 3}
 --- !u!4 &933384338
 Transform:
   m_ObjectHideFlags: 0
@@ -3345,7 +3357,7 @@ MonoBehaviour:
   gravityForce: 40
   movementForce: 100
   maxMovementSpeed: 7
-  groundFrictionLevel: 0.25
+  groundFrictionLevel: 0.1
   jumpForce: 17
 --- !u!1 &1296731787
 GameObject:
@@ -4853,7 +4865,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20e3642b1832af6439362b32bb9bccec, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.19607843, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

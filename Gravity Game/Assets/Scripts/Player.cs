@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public void Reset()
     {
         PlayerData.farthestLevel = 1;
-        for(int i=0; i<Scoring.amountOfLevels; i++){
+        for(int i=0; i<PlayerData.numberOfLevels; i++){
             Scoring.starsPerLevel[i] = 0;
         }
         
