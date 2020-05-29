@@ -26,8 +26,8 @@ public class EndLevel : MonoBehaviour
 
     void Update()
     {
-        //automatic level beat
-        if (Input.GetKeyDown(KeyCode.P))
+        //automatic level beat, provided you're not on the final level
+        if (Input.GetKeyDown(KeyCode.P) && PlayerData.selectedLevel <= PlayerData.numberOfLevels)
         {
             Time.timeScale = 0f;
             player.SetActive(false);
