@@ -1432,6 +1432,7 @@ MonoBehaviour:
   countdown: {fileID: 1755663654}
   remoteGravityReset: {fileID: 1266111218}
   pauseButton: {fileID: 1322581173}
+  quitManager: {fileID: 300756233}
 --- !u!4 &702085870
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,6 +2176,7 @@ MonoBehaviour:
   - {fileID: 8697108970960551116, guid: ce259addc986b6247a007b7245166faf, type: 3}
   - {fileID: 4537399690261512895, guid: f78805f3e76453f4e92f65aa58c03d8a, type: 3}
   - {fileID: 94076441778168296, guid: cb08c2304f2df9e47b31e545f15d8842, type: 3}
+  - {fileID: 405826811539561340, guid: 2e91134a30a83944b81450d815db1814, type: 3}
 --- !u!4 &933384338
 Transform:
   m_ObjectHideFlags: 0

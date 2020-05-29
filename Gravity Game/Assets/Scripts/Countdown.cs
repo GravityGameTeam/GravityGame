@@ -9,6 +9,7 @@ public class Countdown : MonoBehaviour
     public GameObject countdown;
     public GameObject remoteGravityReset;
     public GameObject pauseButton;
+    public GameObject quitManager;
 
     // Start is called before the first frame update
     public void Start()
@@ -34,6 +35,11 @@ public class Countdown : MonoBehaviour
 
         remoteGravityReset.GetComponent<PlayerMovement>().ResetGravity(); //this remotely switches gravity to down
         pauseButton.SetActive(true); //shows hidden pause button when countdown ends
+
+        if (PlayerData.selectedLevel > PlayerData.numberOfLevels) //if you've reached the final victory level
+        {
+            quitManager.GetComponent<EndLevel>().Quit(); //sends you back to title screen.
+        }
     }
 
 }
