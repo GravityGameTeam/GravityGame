@@ -18,7 +18,7 @@ public class DoubleScroll : MonoBehaviour
         //Change the current horizontal scroll position.
         rectPosition = levelsButtonContainer.transform.position;
         rectPosition.z = 100;
-        rectPosition.y -= 3;
+        rectPosition.y -= 2.25f;
         starsImageContainer.transform.position = rectPosition;
     }
 
