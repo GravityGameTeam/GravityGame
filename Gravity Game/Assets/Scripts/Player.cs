@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         SaveData data = SaveSystem.LoadPlayer();
 
         PlayerData.farthestLevel = data.levelSave;
+        
         Scoring.starsPerLevel = data.saveStarsLevels3;
         
         Debug.Log("This is a test load has saved farthest level " + PlayerData.farthestLevel);

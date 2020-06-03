@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
 {
-    public GameObject countdownObject; //what's it for? IDK
+    public GameObject timer; //what's it for? IDK
     
     //basic ground movement and forces
     public float gravityForce;
@@ -192,11 +192,12 @@ public class PlayerMovement : MonoBehaviour //biggest class in the game, fuck
     
     private void Respawn() //called upon spike contact
     {
-        //sends you back to spawn, resets all vectors to default
+        //sends you back to spawn, resets all vectors to default, resets timer
         rb.transform.position = PlayerData.spawnPoint;
         rb.velocity = new Vector2(0, 0);
         gAxis = Y;
         Physics2D.gravity = DOWN;
+        timer.GetComponent<Timer>().Reset();
     }
 
     public void ResetGravity()

@@ -3355,7 +3355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bcd7ce398200d45a7b54a1e6a3509b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownObject: {fileID: 702085868}
+  timer: {fileID: 662104124}
   gravityForce: 40
   movementForce: 100
   maxMovementSpeed: 7

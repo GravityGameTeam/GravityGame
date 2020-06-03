@@ -12,6 +12,11 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Reset();
+    }
+
+    public void Reset()
+    {
         startTime = Time.time;
     }
 
@@ -31,6 +36,4 @@ public class Timer : MonoBehaviour
         PlayerData.time = timeElapsed;
         return timeElapsed;
     }
-
-
 }

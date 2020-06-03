@@ -40,7 +40,6 @@ public class EndLevel : MonoBehaviour
     {
         if (node.gameObject.CompareTag("EndPortal")) //if you reach the end, reset countdown, make player disappear, and beat level
         {
-            
             Time.timeScale = 0f;
             player.SetActive(false);
             LevelBeat();
@@ -72,8 +71,6 @@ public class EndLevel : MonoBehaviour
         {
             PlayerData.farthestLevel ++;
         }
-
-
     }
 
     public void Restart() //reloads Game
@@ -87,7 +84,6 @@ public class EndLevel : MonoBehaviour
         PlayerData.loadStartScreen = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
-        
     }
 
 }
