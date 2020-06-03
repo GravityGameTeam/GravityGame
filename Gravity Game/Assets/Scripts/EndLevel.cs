@@ -23,7 +23,8 @@ public class EndLevel : MonoBehaviour
         pausePanel.SetActive(true);
         menuPanel.SetActive(false); //hides end level screen
     }
-
+    
+    /* Remove these comments to enable dev mode and automatic level beat
     void Update()
     {
         //automatic level beat, provided you're not on the final level
@@ -35,6 +36,7 @@ public class EndLevel : MonoBehaviour
         }
         
     }
+    */
 
     public void OnTriggerEnter2D(Collider2D node)
     {
